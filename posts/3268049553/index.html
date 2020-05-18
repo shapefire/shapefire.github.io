@@ -4,14 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript, ShapeFanBlog">
-    <meta name="description" content="JavaScript学习js输出
-Window.alert ()警告窗
-Window.alert (‘helloworld’)； 内容用单引号’ ‘   window可省略
-
-document.write（）写到HTML文档中
-
-inner">
+    <meta name="keywords" content="Java线程, ShapeFanBlog">
+    <meta name="description" content="Java多线程进程：可执行的程序并存放在计算机存储器的一个指令序列，是动态执行的过程
+线程：线程是比进程还要小的运行单位，一个进程包含多个线程
+​        线程之间是交互运行的状态
+线程的创建
+创建一个Thread 类，或者一个Thr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@ inner">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JavaScript | ShapeFanBlog</title>
+    <title>Java线程 | ShapeFanBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +307,12 @@ inner">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript</h1>
+                    <h1 class="description center-align post-title">Java线程</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +429,8 @@ inner">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/%E5%B9%B6%E5%8F%91/">
+                                <span class="chip bg-color">并发</span>
                             </a>
                         
                     </div>
@@ -443,8 +441,8 @@ inner">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/JavaWeb/" class="post-category">
+                                JavaWeb
                             </a>
                         
                     </div>
@@ -456,14 +454,14 @@ inner">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-06
+                    2020-04-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2020-05-08
                 </div>
                 
                 <!--添加作者信息-->
@@ -475,14 +473,14 @@ inner">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -493,114 +491,191 @@ inner">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JavaScript学习"><a href="#JavaScript学习" class="headerlink" title="JavaScript学习"></a>JavaScript学习</h1><h2 id="js输出"><a href="#js输出" class="headerlink" title="js输出"></a>js输出</h2><ol>
-<li><p>Window.alert ()警告窗</p>
-<p>Window.alert (‘helloworld’)； 内容用单引号’ ‘   window可省略</p>
+                <h1 id="Java多线程"><a href="#Java多线程" class="headerlink" title="Java多线程"></a>Java多线程</h1><p>进程：可执行的程序并存放在计算机存储器的一个指令序列，是<strong>动态执行的过程</strong></p>
+<p>线程：线程是比进程还要小的运行单位，一个进程包含多个线程</p>
+<p>​        线程之间是交互运行的状态</p>
+<h2 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建"></a>线程的创建</h2><ul>
+<li><p>创建一个Thread 类，或者一个Thread子类的对象</p>
+<p>Thread是一个线程类，位于java.lang包下     </p>
+<p>常用方法：run() ;start() —&gt;每个线程的start方法只能启动一次;sleep(); join() –&gt;优先执行调用join()方法的线程</p>
 </li>
-<li><p>document.write（）写到HTML文档中</p>
+<li><p>创建一个实现Runnabke接口的类的对象</p>
+<p>Runnable接口：</p>
+<ul>
+<li>只有一个run（）方法</li>
+<li>Runnable是JAVA中用来实现线程的接口</li>
+<li><strong>任何实现线程功能的类都必须实现该接口</strong></li>
+</ul>
 </li>
-<li><p>innerHTML写到HTML元素</p>
-<p>要先获取标签  语法：document.getElementById（’标签名’).innerHTML =” xxxxx”</p>
+<li><p>通过继承Thread类的方式创建线程类，重写run方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">"该线程正在运行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"主线程1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        MyThread mt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mt<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//启动线程  start方法只能调用一次</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"主线程2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//输出结果  输出结果随机</span>
+主线程<span class="token number">1</span>
+主线程<span class="token number">2</span>
+Thread<span class="token operator">-</span><span class="token number">0</span> 该线程运行 
+
+<span class="token comment" spellcheck="true">//结果分析</span>
+主方法线程先输出，自定义线程mt后输出 <span class="token punctuation">;</span>准确的说输出结果的顺序是随机的<span class="token punctuation">;</span>线程之间是交互运行的状态</code></pre>
 </li>
-<li><p>console.log() 写到游览器控制台</p>
-<p>​    console.log(‘xxx’)</p>
-</li>
+<li><p>通过实现Runnable接口</p>
+<ul>
+<li>实现Runnable接口的原因：Java不支持多继承；不打算重写Thread的方法</li>
+</ul>
+<pre><code>class PrintRunnable implements Runnable{
+    @Override
+    public void run(){
+            System.out.println(Thread.currentThread().getName +&quot;正在运行&quot;));
+    }
+}
+public class ThreadTest(){
+    public static void main(String[] args){
+        PrintRunnable pr = new PrintRunnable();
+        Thread t1 = new Thread(pr);
+        t1.start();
+    }
+}</code></pre></li>
+</ul>
+<h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><ul>
+<li>新建（new）</li>
+<li>可运行（Runnable） 也称就绪转态</li>
+<li>正在运行（Running）</li>
+<li>阻塞（Blocked）</li>
+<li>终止（Dead）</li>
+</ul>
+<h2 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h2><p>创建线程对象  （新建 new） – start()–&gt; (可运行Runnable) &lt; – 时间片用完  —–  获取cpu使用权–&gt;(正在运行Running) — join();wait();sleep();I/O请求 —&gt;（阻塞Blocked）</p>
+<p>阻塞状态（Blocked）<strong>不可直接退回</strong>Running状态 </p>
+<p>阻塞状态（Blocked） —&gt;Runnable   : 1.等待调用join()的线程执行完毕；2.notify()或notifyAll(); 3.sleep 超时； 4. I/O请求完成</p>
+<p>Running  —&gt;Dead : 线程执行完毕或异常终止 </p>
+<p>任何状态都可用 stop() 转化为 Dead 状态，在java中已不建议使用stop()</p>
+<h2 id="方法应用"><a href="#方法应用" class="headerlink" title="方法应用"></a>方法应用</h2><p>Thread 类的sleep()方法:  public <strong>static</strong> void <strong>sleep</strong>(long millis)   休眠</p>
+<p>​    调用sleep 方法 需捕获InterruptedException异常</p>
+<p>Thread 类的join()方法:  public <strong>final</strong> void <strong>join</strong>()   等待调用该方法的线程结束后才能执行</p>
+<p>​    调用join 方法 需捕获InterruptedException异常</p>
+<p>Thread 类的join()方法:  public <strong>final</strong> void <strong>join</strong>(llong millis)  等待调用线程终止的最长时间为mills毫秒</p>
+<p>​    wait()方法：中断方法的执行，使线程等待</p>
+<p>​    notify方法：唤醒处于等待的某一个线程，使其结束等待</p>
+<p>​    nitifyAll()方法：唤醒<strong>所有</strong>处于等待的线程，使它们结束等待</p>
+<h2 id="线程优先级"><a href="#线程优先级" class="headerlink" title="线程优先级"></a>线程优先级</h2><p>Java为线程类提供了10 个优先级 ，优先级可用整数1-10 表示，超过范围会抛出异常</p>
+<p>主线程默认优先级为5 ，数字越高 优先级越高</p>
+<ul>
+<li>优先级常量( Thread类的常量)<ol>
+<li>MAX_PRIORITY</li>
+<li>MIN_PRIORITY</li>
+<li>NORM_PRIORITY    优先级：5</li>
 </ol>
-<h2 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h2><p>字符串 （String） 数字（Number）布尔（Boolean） 数组（Array）对象（Object） 空（Null）</p>
-<p>未定义（Undefined）</p>
-<p>​    <strong>var 可以声明各种类型</strong>  </p>
-<p>​    JavaScript对象   键值对    var person ={name:”xxx”,id:”xxx”};</p>
-<h2 id="js变量"><a href="#js变量" class="headerlink" title="js变量"></a>js变量</h2><p>变量必须以字母开头</p>
-<p>变量也可以以$和_符号开头（不推荐）</p>
-<p>变量名称对<strong>大小写敏感</strong> （y和Y是不同的变量）</p>
-<h2 id="js函数"><a href="#js函数" class="headerlink" title="js函数"></a>js函数</h2><p>函数是由 事件驱动的 或者当它被调用时可执行的可重复使用的代码块</p>
-<p>function a( 参数){  }     声明会前置：不管函数在哪个位置游览器都会将函数前置</p>
-<p>var a = function(参数) {  }</p>
-<h2 id="js的for-in-语法"><a href="#js的for-in-语法" class="headerlink" title="js的for in 语法"></a>js的for in 语法</h2><p> 例子：  var person ={name:”zhangsan”,id:”9527”};   for(xx in person){ console.log(person[key])} </p>
-<p>​                上面 输出为：person对象中的所有key对应的值 即  zhangsan   9527  </p>
-<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展置标语言的标准编程接口。它是一种与平台和语言无关的应用程序接口(API),它可以动态地访问程序和脚本,更新其内容、结构和www文档的风格(目前,HTML和XML文档是通过说明部分定义的)。文档可以进一步被处理，处理的结果可以加入到当前的页面。<strong>DOM是一种基于树的API文档</strong>，它要求在处理过程中整个文档都表示在存储器中。另外一种简单的API是基于事件的SAX，它可以用于处理很大的XML文档，由于大，所以不适合全部放在存储器中处理。</p>
-<h3 id="js-获取html标签"><a href="#js-获取html标签" class="headerlink" title="js 获取html标签"></a>js 获取html标签</h3><ol>
-<li><p>document.getElementById</p>
 </li>
-<li><p>document.getElementsByTagName()   获取标签内的标签  结果可能是数组</p>
-<p>例如获取id为main的第一个p标签：var main = ddocument.getElementById(‘’main”); var p =main..getElementsByTagName(“p”)[0];</p>
-</li>
-<li><p>document.getElementsByClass()</p>
-</li>
-</ol>
-<h3 id="修改HTML属性"><a href="#修改HTML属性" class="headerlink" title="修改HTML属性"></a>修改HTML属性</h3><ol>
-<li>element.getAttribute()</li>
-<li>element.setAttribute() //添加或修改</li>
-<li>element.src</li>
-<li>element.href</li>
-</ol>
-<h3 id="修改CSS样式"><a href="#修改CSS样式" class="headerlink" title="修改CSS样式"></a>修改CSS样式</h3><p>​    例子：改变标签的css的颜色： document.getElementById（“xx”).style.color =“xx”</p>
-<h3 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h3><p>写法：</p>
-<ol>
-<li><h1 onclick="this.innerHTML='谢谢！'">请点击该文本 </h1>
-</li>
-<li><p>Element.onclick = function(){  displayDate()};</p>
-</li>
-<li><p>Element.addEventListener(“click”,function(){     })</p>
-</li>
-</ol>
-<h3 id="DOM节点"><a href="#DOM节点" class="headerlink" title="DOM节点"></a>DOM节点</h3><p>添加和删除节点</p>
-<ol>
-<li>document.createElement(“p”)</li>
-<li>document.createTextNode(“新增”) //1和2 一般结合3或4 一起使用</li>
-<li>parent.appendChild(child);       </li>
-<li>parent.removeChild(child);</li>
-</ol>
-<h2 id="JS–Window"><a href="#JS–Window" class="headerlink" title="JS–Window"></a>JS–Window</h2><p>所有的游览器都支持window对象</p>
-<p>所有JavaScript全局对象，函数以及变量均自动成为window对象的成员</p>
-<p>全局变量是window对象的属性</p>
-<p>全局函数是window对象的方法</p>
-<p>window.open()</p>
-<p>window.close()</p>
-<p>window.moveTo() -移动当前窗口</p>
-<p>window.resizeTo()- 调整当前窗口尺寸</p>
-<p>screen.availwidth  屏幕的可用宽度</p>
-<p>screen.availHeight 屏幕的可用高度</p>
-<p>location.hostname 返回web主机的域名‘</p>
-<p>location.pathname 返回当前页面的路径和文件名</p>
-<p>location.protocol 返回所使用的web协议</p>
-<p>location.href 返回当前页面的整个URL</p>
-<p>history.back  后退</p>
-<p>history.forward  向前</p>
-<p>history.go</p>
-<h2 id="JS实现图片轮播特效"><a href="#JS实现图片轮播特效" class="headerlink" title="JS实现图片轮播特效"></a>JS实现图片轮播特效</h2><ol>
-<li><p>如果让超链接a标签不作超链接跳转：<a href="javascript:void(0)"></a>  </p>
-</li>
-<li><p>让几张图片图片重叠在一起 ，使用定位  父相子绝（父级：相对定位，子：绝对定位）</p>
-</li>
-<li><p>使用 display：none  隐藏图片，让特定当前的图片显示 display：block</p>
-</li>
-<li><p>对于同一个产品等级的标签  它的class 应写多个名字来用于写CSS样式  ，将相同的样式和不同的样式分开，减少代码</p>
-<p>例如：上一张和下一张的按钮 ，上一张的命名为 class=“button  pre”,上一张的命名为 class=“button next ”  </p>
-</li>
-<li><p>旋转   transfrom ：rotate（180deg）   透明度：opacity ：0.8  为兼容游览器一般添加 fillter:alpha(opacity=80)</p>
-</li>
-<li><p>水平排列： display:inline-block;</p>
-</li>
-<li><p>让一些形状（例如圆形）有外圈亮的描边： 先设置该形状的背景颜色，再使用阴影颜色</p>
-<p>​     backgroud:rgba(7,1,27，0.8)    box-shadow:0  0  0  2px rgba(255,255,255,0.8)   inset；</p>
-<p>​    rgba的a指透明度          box-shadow:阴影</p>
-</li>
-<li><p>当鼠标停留在轮播的图片时，停止轮播  </p>
-</li>
-<li><p>js判断参数类型   typeof（参数） === “string”? document.getElementById(id) :id</p>
-<p>封装getElementById(id):</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">byId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span>    <span class="token keyword">typeof</span>（id） <span class="token operator">===</span> “string”<span class="token operator">?</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">:</span>id<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-</li>
-<li><p>编写鼠标划过图片事件：业务逻辑为滑过清除定时器  方法：if(timer) clearInterval(timer);</p>
-</li>
-<li><p>编写自动播放图片事件：业务逻辑为切换图片   方法：设置var timer = serInterval(function(){},3000)</p>
-</li>
-<li><p>setInterval(function(){},3000)   :3秒执行一次该方法</p>
-</li>
-</ol>
+</ul>
+<p>获取优先级： getPriority（）</p>
+<p>设置线程优先级： setPriority(int newPriority)</p>
+<h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p>多线程运行问题</p>
+<ul>
+<li>各个线程是通过竞争CPU时间而获得运行机会</li>
+<li>各线程什么时候得到CPU时间，占用多久，是不可预测</li>
+<li>一个正在运行着的线程在什么地方被暂停也是不可确定</li>
+</ul>
+<p>例子：某一银行有存款和取款操作，为了保证在存款或取款的时候，不允许其他线程对账户余额进行修改的操作；所以需要将Bank对象锁定，将使用<strong>关键字synchronized 实现</strong> ，确保共享对象在同一时刻只能被一个线程访问。</p>
+<p>​    synchronized关键字可以用在 <strong>成员方法</strong>；<strong>静态方法</strong>；<strong>语句块</strong></p>
+<h2 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h2><p>问题：银行系统中账户余额不够 怎么处理？</p>
+<p>解决：  生产者（Producer类进行数据的生产）  ——–》 Queue类 n( x)  ———》 消费者（Comsumer类进行数据的存取）   遵守： 生产一个数据，存读取（消费）一个数据</p>
+<pre><code>public class Queue{
+    private int n;
+    Boolean flag = flase;//保证生产一个消费一个而产生的标记变量 true代表
+
+    public synchronized int getN(){
+        if(！flag){
+            try{
+                wait();
+            }catch( InterruptedExcrption e){
+                e.printStackTrace();
+            }
+        }
+        System.out.println(&quot;消费：&quot;+ n) ;
+        flag  = false;//消费完毕，容器内没有数据
+        notifyAll();
+        return n;
+    }
+    public synchronized void setN(int n){
+        if(flag){
+            try{
+                wait();
+            }catch( InterruptedExcrption e){
+                e.printStackTrace();
+            }
+        }
+        System.out.println(&quot;生产：&quot;+ n) ;
+        this.n = n;
+        flag = true ;//生产完毕，容器内有数据
+        notifyAll();
+    }
+}
+
+
+public class Producer implements Runnable{
+    Queue queue;
+    Producer(Queue queue){
+        this.queue = queue;
+    }
+    @override
+    public void run(){
+        int i =0;
+        while(true){
+            queue.set(i++);
+            try{
+                Thread.sleep(1000);
+            }catch( InterruptedExcrption e){
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class Consumer implements Runnable(){
+    Queue queue;
+    Producer(Queue queue){
+        this.queue = queue;
+    }
+    @override
+    public void run(){
+        while(true){
+            queue.get(i);
+            try{
+                Thread.sleep(1000);
+            }catch( InterruptedExcrption e){
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class Test{
+    public statiic void main(String[] args){
+        Queue queue=new Queue();
+        new Thread(new Producer(queue)).start();
+        new Thread(new Producer(Consumer).start();
+    }
+}
+
+
+//输出结果
+生产：1
+消费：1
+生产：2
+消费：2
+。。。
+。。。</code></pre><p>​                                                                                                                                                          </p>
 
             </div>
             <hr/>
@@ -626,7 +701,7 @@ inner">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shapefire.github.io/posts/3424359953.html">http://shapefire.github.io/posts/3424359953.html</a>
+                    <a href="http://shapefire.github.io/posts/3268049553/">http://shapefire.github.io/posts/3268049553/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -664,8 +739,8 @@ inner">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/js/">
-                                    <span class="chip bg-color">js</span>
+                                <a href="/tags/%E5%B9%B6%E5%8F%91/">
+                                    <span class="chip bg-color">并发</span>
                                 </a>
                             
                         </div>
@@ -710,35 +785,37 @@ inner">
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/2024902247.html">
+                <a href="/posts/3424359953/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="JSP">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
                         
-                        <span class="card-title">JSP</span>
+                        <span class="card-title">JavaScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JSP（Java Server Page）根本：简化的Servlet设计
-JSP是在传统的网页HTML文件中插入Java程序段（Scriptlet)和JSP标记（tag) 
-JSP开发的web应用是跨平台
-动态项目的结构
-java Reso
+                            JavaScript学习js输出
+Window.alert ()警告窗
+Window.alert (‘helloworld’)； 内容用单引号’ ‘   window可省略
+
+document.write（）写到HTML文档中
+
+inner
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaWeb/" class="post-category">
-                                    JavaWeb
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -748,8 +825,8 @@ java Reso
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JSP/">
-                        <span class="chip bg-color">JSP</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>
@@ -763,35 +840,32 @@ java Reso
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3268049553.html">
+                <a href="/posts/1821512031/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java线程">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Spring">
                         
-                        <span class="card-title">Java线程</span>
+                        <span class="card-title">Spring</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java多线程进程：可执行的程序并存放在计算机存储器的一个指令序列，是动态执行的过程
-线程：线程是比进程还要小的运行单位，一个进程包含多个线程
-​        线程之间是交互运行的状态
-线程的创建
-创建一个Thread 类，或者一个Thr
+                            SpringIOC(inversion of control):  对象有Spring容器创建，对象属性是Spring容器来设置
+控制的内容：指谁来控制对象的创建；传统的应用程序是由程序本身控制，使用Spring后，由Spring来创建对象
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaWeb/" class="post-category">
-                                    JavaWeb
+                            <a href="/categories/SSM/" class="post-category">
+                                    SSM
                                 </a>
                             
                             
@@ -801,8 +875,8 @@ java Reso
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B9%B6%E5%8F%91/">
-                        <span class="chip bg-color">并发</span>
+                    <a href="/tags/Spring/">
+                        <span class="chip bg-color">Spring</span>
                     </a>
                     
                 </div>

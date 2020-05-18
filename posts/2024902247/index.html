@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Kaptcha框架验证码实现, ShapeFanBlog">
-    <meta name="description" content="Kaptcha框架验证码实现​    工作原理：调用 com.google.code.kaptcha.servlet.KaptchaServlet,生成一张图片，同时将生成的验证码字符放在 HttpSession中，直接从session中获">
+    <meta name="keywords" content="JSP, ShapeFanBlog">
+    <meta name="description" content="JSP（Java Server Page）根本：简化的Servlet设计
+JSP是在传统的网页HTML文件中插入Java程序段（Scriptlet)和JSP标记（tag) 
+JSP开发的web应用是跨平台
+动态项目的结构
+java Reso">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Kaptcha框架验证码实现 | ShapeFanBlog</title>
+    <title>JSP | ShapeFanBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -303,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Kaptcha框架验证码实现</h1>
+                    <h1 class="description center-align post-title">JSP</h1>
                 </div>
             </div>
         </div>
@@ -425,8 +429,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/">
-                                <span class="chip bg-color">验证码</span>
+                            <a href="/tags/JSP/">
+                                <span class="chip bg-color">JSP</span>
                             </a>
                         
                     </div>
@@ -437,8 +441,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%AA%8C%E8%AF%81%E7%A0%81/" class="post-category">
-                                验证码
+                            <a href="/categories/JavaWeb/" class="post-category">
+                                JavaWeb
                             </a>
                         
                     </div>
@@ -450,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-04-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-02
+                    2020-05-06
                 </div>
                 
                 <!--添加作者信息-->
@@ -469,14 +473,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    778
+                    412
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -487,209 +491,282 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Kaptcha框架验证码实现"><a href="#Kaptcha框架验证码实现" class="headerlink" title="Kaptcha框架验证码实现"></a>Kaptcha框架验证码实现</h1><p>​    <strong>工作原理：</strong>调用 <code>com.google.code.kaptcha.servlet.KaptchaServlet</code>,生成一张图片，同时将生成的验证码字符放在 <strong>HttpSession</strong>中，直接从session中获取这张验证码图片，从而不会占用实际内存。</p>
-<p><strong>使用Kaptcha可以方便的配置以下细节：</strong></p>
-<ul>
-<li>验证码的字体的<strong>颜色，大小</strong></li>
-<li>验证码<strong>内容的范围</strong></li>
-<li>验证码<strong>图片的大小，边框，边框粗细，边框颜色</strong></li>
-<li>验证码的<strong>干扰线</strong></li>
-<li>验证码的<strong>样式</strong></li>
+                <h1 id="JSP（Java-Server-Page）"><a href="#JSP（Java-Server-Page）" class="headerlink" title="JSP（Java Server Page）"></a>JSP（Java Server Page）</h1><p>根本：简化的Servlet设计</p>
+<p>JSP是在传统的网页HTML文件中插入Java程序段（Scriptlet)和JSP标记（tag) </p>
+<p>JSP开发的web应用是跨平台</p>
+<h2 id="动态项目的结构"><a href="#动态项目的结构" class="headerlink" title="动态项目的结构"></a>动态项目的结构</h2><ul>
+<li>java Resource  包含项目的java源码</li>
+<li>WebContent 所有的web资源（包括HTML,JSP和图形文件等）的指定位置</li>
+<li>WEB-INF 对于Web应用程序，此目录包含支持的web资源，包含web.xml以及classes和lib目录</li>
+<li>/classes  Java编译器产生的类文件输出目录。应用程序类载入器使用此目录中的类来装载运行时所需要的功能</li>
+<li>/lib 包含web应用程序所引用的支持性JAR文件，是综和的资源文件目录</li>
+<li>web.xml  核心文件  标准的web应用程序部署描述符</li>
 </ul>
-<p>​    <strong>具体属性配置项：</strong></p>
-<table>
-<thead>
-<tr>
-<th>配置项</th>
-<th align="left">描述</th>
-<th>默认值</th>
-<th>可选值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>kaptcha.border</td>
-<td align="left">是否有边框</td>
-<td>默认为yes</td>
-<td>yes,no</td>
-</tr>
-<tr>
-<td>kaptcha.border.color</td>
-<td align="left">边框颜色</td>
-<td>默认为Color.BLACK</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.border.thickness</td>
-<td align="left">边框粗细度</td>
-<td>默认为1</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.producer.impl</td>
-<td align="left">验证码生成器</td>
-<td>默认为DefaultKaptcha</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.impl</td>
-<td align="left">验证码文本生成器</td>
-<td>默认为DefaultTextCreator</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.char.string</td>
-<td align="left">验证码文本字符内容范围</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.char.length</td>
-<td align="left">验证码文本字符长度</td>
-<td>默认为5</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.font.names</td>
-<td align="left">验证码文本字体样式</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.font.size</td>
-<td align="left">验证码文本字符大小</td>
-<td>默认为40</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.font.color</td>
-<td align="left">验证码文本字符颜色</td>
-<td>默认为Color.BLACK</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.char.space</td>
-<td align="left">验证码文本字符间距</td>
-<td>默认为2</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.noise.impl</td>
-<td align="left">验证码噪点生成对象</td>
-<td>默认为DefaultNoise</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.noise.color</td>
-<td align="left">验证码噪点颜色</td>
-<td>默认为Color.BLACK</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.obscurificator.impl</td>
-<td align="left">验证码样式引擎</td>
-<td>默认为WaterRipple</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.word.impl</td>
-<td align="left">验证码文本字符渲染</td>
-<td>默认为DefaultWordRenderer</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.background.impl</td>
-<td align="left">验证码背景生成器</td>
-<td>默认为DefaultBackground</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.background.clear.from</td>
-<td align="left">验证码背景颜色渐进</td>
-<td>默认为Color.LIGHT_GRAY</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.background.clear.to</td>
-<td align="left">验证码背景颜色渐进</td>
-<td>默认为Color.WHITE</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.image.width</td>
-<td align="left">验证码图片宽度</td>
-<td>默认为200</td>
-<td></td>
-</tr>
-<tr>
-<td>kaptcha.image.height</td>
-<td align="left">验证码图片高度</td>
-<td>默认为50</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>图片样式：kaptcha.obscurificator.impl<br>水纹 com.google.code.kaptcha.impl.WaterRipple<br>鱼眼 com.google.code.kaptcha.impl.FishEyeGimpy<br>阴影 com.google.code.kaptcha.impl.ShadowGimpy</p>
-<p><strong>实现</strong></p>
+<h2 id="JSP程序的执行过程"><a href="#JSP程序的执行过程" class="headerlink" title="JSP程序的执行过程"></a>JSP程序的执行过程</h2><p>客户端用过游览器将.jsp文件发送到web服务器，读取.jsp文件 生成.java文件（Servelet源程序），.java文件编译成.class文件，服务器读取.class文件后返回给用户的是html网页</p>
+<h2 id="JSP基本语法"><a href="#JSP基本语法" class="headerlink" title="JSP基本语法"></a>JSP基本语法</h2><p>JSP声明语法：<strong>&lt;%!</strong>  String str = “hello “ ; <strong>%&gt;</strong>    通常声明全局变量、常量、方法、类</p>
 <ul>
-<li><p>下载驱动jar包</p>
+<li>定义成员变量，以及成员方法</li>
+<li>不能直接包含程序语句  &lt;%!  out.print(“hello”); %&gt;    ×   </li>
+</ul>
+<p>JSP程序脚本：<strong>&lt;%</strong> out.print(“hello”); <strong>%&gt;</strong>   其中可包含局部变量、java语句</p>
 <ul>
-<li><p>将jar包放入WEB-INF/lib目录下</p>
-</li>
-<li><p>web.xml中配置Servlet：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>Kaptcha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-class</span><span class="token punctuation">></span></span>com.google.code.kaptcha.servlet.KaptchaServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-</span>   <span class="token attr-name">class</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-mapping</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>Kaptcha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/kaptcha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span></code></pre>
-</li>
-<li><p>在web.xml中配置验证码Servlet（设置具体属性值）</p>
-<p> 在<Servlet>标签中添加<init-param>标签，例如将验证码的边框设置为no:</init-param></Servlet></p>
-</li>
+<li>包括变量的声明，表达式和程序逻辑</li>
+<li>声明的变量转换为_service 方法中的变量，因而是<strong>局部变量</strong></li>
+<li>语句块可以自由地与页面代码组合使用</li>
 </ul>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>init-param</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param-name</span><span class="token punctuation">></span></span>kaptcha.border<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parm-name</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param-value</span><span class="token punctuation">></span></span>no<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>param-value</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>init-param</span><span class="token punctuation">></span></span></code></pre>
-<ul>
-<li>编写验证类</li>
-</ul>
-<pre class=" language-java"><code class="language-java">String compareCode<span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span>com<span class="token punctuation">.</span>google<span class="token punctuation">.</span>code<span class="token punctuation">.</span>kaptcha<span class="token punctuation">.</span>Constants<span class="token punctuation">.</span>KAPTCHA_SESSION_KEY<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-String inCode <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"inCode"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//inCode为用户输入的验证码</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span>inCode<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>compareCode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span><span class="token string">"index.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">else</span><span class="token punctuation">{</span>
-request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"err"</span><span class="token punctuation">,</span> <span class="token string">"验证码输入错误！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-String url <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token string">"Referer"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-</li>
-</ul>
-<p>以上的Kaptcha框架实现是在web.xml中配置实现</p>
-<ul>
-<li><p>代码实现Kaptcha框架（下部分代码替代web.xml的配置）</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//设置属性集</span>
-Properties pros <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-pros<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"kaptcha.border"</span><span class="token punctuation">,</span> <span class="token string">"no"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Config config <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Config</span><span class="token punctuation">(</span>pros<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//创建kaptcha对象</span>
-DefaultKaptcha kaptcha <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultKaptcha</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-kaptcha<span class="token punctuation">.</span><span class="token function">setConfig</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//生成验证码并保存到Session</span>
-String code <span class="token operator">=</span> kaptcha<span class="token punctuation">.</span><span class="token function">createText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>KAPTCHA_SESSION_KEY<span class="token punctuation">,</span> code<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//生成图片</span>
-BufferedImage img <span class="token operator">=</span> kaptcha<span class="token punctuation">.</span><span class="token function">createImage</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//返回图片</span>
-ServletOutputStream sos <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-ImageIO<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> <span class="token string">"png"</span><span class="token punctuation">,</span> sos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-sos<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-sos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</li>
-</ul>
+<p>编程练习  ：输出1到100 的和</p>
+<pre class=" language-jsp"><code class="language-jsp"><%! int sum =0;%>
+<span>1到10的和=</span>
+<% for(int i = 1;i<101;i++){
+        sum+= i;
+    }
+%>
+<%=sum %></code></pre>
+<p>JSP注释： &lt;%– –%&gt; 和 java注释</p>
+<p>JSP内容表达式  <strong>&lt;%=</strong>i <strong>%&gt;</strong></p>
+<p>编程练习：在JSP页面中根据x的值进行判断并得出y的值，并将结果在游览器中居中显示</p>
+<p>   y= {  -1 (x&lt;0)    0 (x=0)  1(x&gt;0) }   输出内容: 当x&lt;0时 ，输出  x= -5   y = -1</p>
+<pre class=" language-jsp"><code class="language-jsp"><%! int x = -8;
+    int y;%>
 
+<%if(x<0){
+%>
+<p style="text-align:center">当x<0时</p> 
+<% y=-1;
+}
+ else if(x== 0 ){
+%>
+<p style="text-align:center">当x=0时</p> 
+<% y=0;}
+else {
+%>
+<p style="text-align:center">当x>0时</p> 
+<% y=1;}
+%>
+<% out.println(); %>
+<p style="text-align:center">x=<%=x %></p>
+<%out.println();%>
+<p style="text-align:center">y=<%=y %></p></code></pre>
+<p>JSP包引入 &lt;%@page import =”java.util.Date” %&gt; 不同的包引用可用逗号隔开，作为整体字符串</p>
+<h2 id="JSP内置对象和四种作用域"><a href="#JSP内置对象和四种作用域" class="headerlink" title="JSP内置对象和四种作用域"></a>JSP内置对象和四种作用域</h2><p>Http协议 ： http请求  http响应</p>
+<p>请求与响应模式：</p>
+<p>在JSP中请求和响应对象是通过内置对象存在的</p>
+<p>内置对象（又叫隐含对象，有9个内置对象）：不需要预先声明就可以在脚本代码和表达式中随意使用</p>
+<p>作用域：pageContext，request，session，application</p>
+<p><strong>request对象</strong>：封装了由web游览器或其他客户端生成的HTTP请求的细节（参数，属性，头标和数据） </p>
+<p>​            作用域：用户的请求周期（在相邻两个web资源之间共享同一个request请求对象时使用）</p>
+<p><strong>out</strong>:代表输出流的对象</p>
+<p><strong>response</strong>：封装了返回到Http客户端的输出，向页面作者提供设置响应头标和状态码的方式</p>
+<p><strong>pageContext</strong> ：提供转发请求到其他资源和包含其他资源的方法，提供获取其他内置对象的方法</p>
+<pre><code>1. forward方法来完成请求的转发 
+ 2. include 方法    include动态指令 ：添加某一模块部分的jsp页面    完成页面的包含关系
+ 3. pagecontext可以获取其他的内置对象。getRequest，getSession...</code></pre><p> page：代表了正在运行的由JSP文件产生的类对象</p>
+<p>pageContext的作用域：当前执行页</p>
+<p><strong>Session</strong>:主要用于跟踪会话</p>
+<p>​    会话：代表用户第一次进入当前系统知道退出系统或关闭游览器，在此期间与服务器的一系列交互。</p>
+<p>​    作用域：会话期间</p>
+<p> 设置Session的有效时间：session。setMaxInactiveInterval(int second) </p>
+<p>​    该方法常见于：登录一个系统页面后，若几分钟没有操作将需要重新登录</p>
+<p><strong>Config</strong>：获取配置信息</p>
+<p><strong>exception:</strong>异常对象  只能在错误页面使用</p>
+<p>​    要想在页面中使用exception 对象，需要添加&lt;%@ isErrorPage=”true”%&gt;指定该页面为异常捕获页面</p>
+<p>​    有一个页面出现异常，在页面中指定一个错误处理页面，page指令当中，errorpage来指定</p>
+<p><strong>application</strong>对象：提供关于服务器版本，应用及初始化参数和应用内资源绝对路径方式</p>
+<p>​    作用域：web容器的生命周期</p>
+<p>   应用：获取应用的访问量</p>
+<h2 id="通过URL参数的方式来传递数据"><a href="#通过URL参数的方式来传递数据" class="headerlink" title="通过URL参数的方式来传递数据"></a>通过URL参数的方式来传递数据</h2><p>​    规则：资源？key=value&amp;key=value</p>
+<h2 id="JSTL和EL表达式"><a href="#JSTL和EL表达式" class="headerlink" title="JSTL和EL表达式"></a>JSTL和EL表达式</h2><p>EL表达式语法 ：${ 变量名}  代替request获取值</p>
+<p>JSTL标准标签库：（JavaServerPages Standard Tag Library）</p>
+<p>JSTL通常会与EL表达式合作实现JSP页面的编码</p>
+<p>JSTL开发准备：</p>
+<p>​        在jsp页面添加taglib指令&lt;%@ taglib uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> prefix=”c”%&gt;</p>
+<p>JSTL常用标签：</p>
+<p>通用标签：</p>
+<p>set标签：将值保存到指定范围里</p>
+<ul>
+<li><p>将value值存储到范围为scope的变量variable中</p>
+<p>&lt;c:set  var=”username” value=“张三” scope=”request” /&gt;：往request对象存储名为 username 值为张三的数据键值对</p>
+</li>
+</ul>
+<p>out标签：将结果输出显示</p>
+<p>​        &lt;c:out value=”value” /&gt;</p>
+<p>remove标签：删除<strong>指定域内</strong>数据</p>
+<p>​        &lt;c:remove var=”username” scope=”session” /&gt;    </p>
+<p>条件标签： if 标签 ， choose 标签</p>
+<p>if标签： test：接判断的条件，如果条件为true，将执行标签体内的内容</p>
+<p> choose标签需要与when和otherwise标签一起使用</p>
+<p>迭代标签 forEach</p>
+<pre><code> &lt;c:foreach items=&quot;&quot; var=&quot;&quot;&gt; &lt;/c:foreach&gt;</code></pre><p>items :集合   var:数据类型</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>特点：</p>
+<ul>
+<li><p>通过在后台与服务器进行少量数据交换，Ajax可以使网页实现异步更新</p>
+</li>
+<li><p>不使用Ajax的传统网页如果需要更新，必须重载整个网页页面</p>
+</li>
+</ul>
+<p>使用Ajax实现局部更新</p>
+<p>​    引用jquery包</p>
+<p>例：点击登录按钮时触发ajax事件    登录按钮：<input type="button" value="登录" id="login"></p>
+<pre><code>&lt;!--dataType：指明Servlet给Ajax返回数据的数据格式
+    result:封装了Servlet返回的Ajax的结果
+--&gt;
+&lt;script type=&quot;text/javaScript&quot;&gt;
+    ${&quot;#login&quot;}.click(function(){
+        $.ajax({
+            url:&quot;&quot;,
+            type:&quot;post&quot;,
+            data:{
+                username:$(&quot;input[name=username]&quot;).val();
+                password:$(&quot;input[name=password]&quot;).val()
+            },
+            dataType:&quot;json&quot;,
+            success:function(result){
+                var flag = result.flag;
+                if(flag==true){
+                    window.location.href=&quot;成功页面&quot;;
+                }
+                else{
+                    &lt;!--跳回登录页面--&gt;
+                }
+
+        });
+    });
+&lt;/script&gt;</code></pre><p>​    url:请求时的地址</p>
+<p>​    type:请求时数据的传递方式（常用的get/post）</p>
+<p>​    data：用来传递的数据（建议使用json来传递）</p>
+<p>​    success：交互成功后要执行的方法</p>
+<p>​    dataType:ajax 接收后台数据的类型（建议使用json）</p>
+<p>​    注意事项：ajax和后台交互时，<strong>后台是不能够直接跳转到其他页面的</strong></p>
+<p>练习：通过点击不同的按钮页面显示不同的信息</p>
+<pre class=" language-jsp"><code class="language-jsp"><%--
+  Created by IntelliJ IDEA.
+  User: Fan
+  Date: 2020/4/16
+  Time: 17:30
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="js/jquery-3.2.1.js"></script>
+<html>
+  <head>
+    <title>欢迎</title>
+  <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+  <body>
+  <%
+    String basePath =request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()
+    +request.getServletContext().getContextPath()+"/";
+  %>
+  <input type="button" id="popularButton" value="流行歌曲" onclick="getText(this.value)" >
+  <input type="button" id="classicalButton" value="古典歌曲" onclick="getText(this.value)" >
+  <input type="button" id="rockButton" value="摇滚歌曲" onclick="getText(this.value)" >
+  <h2 class="1"></h2>
+  <h2 class="2"></h2>
+  <h2 class="3"></h2>
+  </body>
+<script type="text/javascript">
+
+ /* var temp =1;
+  $("#popularButton").click(function () {
+    $.ajax({
+      url:"<%=basePath%>/MusicServlet",
+      type:"post",
+      data:{
+        popularButton:$("input[name=popularButton]").val(),
+      },
+      dataType:"json",
+     success :function (result) {
+       for (var i = 0; i < result.length; i++,temp++) {
+         var json1 =  result[i];
+         for(var item in json1){
+           if(item==temp){
+             var jValue=json1[item];
+             console.log(jValue);
+           }
+         }
+       }
+     }
+    });
+  });*/
+  function getText(param1) {
+    $(".tips").text(param1);
+    var temp =1;
+    $.ajax({
+      url:"<%=basePath%>/MusicServlet",
+      type:"post",
+      data:{
+       "buttonValue":param1,
+      },
+      dataType:"json",
+      success :function (result) {
+        for (var i = 0; i < result.length; i++,temp++) {
+          var json1 =  result[i];
+          for(var item in json1){
+            if(item==temp){
+              var jValue=json1[item];
+              $("."+temp).text(jValue);
+            }
+          }
+        }
+      }
+    })
+  }
+
+</script>
+
+</html></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * @Author:Fan
+ * @Description:
+ * @Date:Create in 17:36 2020/4/16
+ * @Modify By:
+ **/</span>
+<span class="token annotation punctuation">@WebServlet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"MusicServlet"</span><span class="token punctuation">,</span>urlPatterns <span class="token operator">=</span> <span class="token string">"/MusicServlet"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MusicServlet</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token function">doGet</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        String buttonType <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"buttonValue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>buttonType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JSONArray array<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">JSONArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JSONObject jsonObject1<span class="token operator">=</span>null<span class="token punctuation">;</span>
+        JSONObject jsonObject2 <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"流行歌曲"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>buttonType<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+             jsonObject1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{1:成都}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             jsonObject2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{2:成都好}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"古典歌曲"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>buttonType<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+             jsonObject1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{1:梅花三弄}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             jsonObject2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{2:阳春白雪}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"摇滚歌曲"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>buttonType<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            jsonObject1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{1:春天里}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            jsonObject2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{2:不再犹豫}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        array<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>jsonObject1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        array<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>jsonObject2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token operator">+</span>array<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        response<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>JavaScript版 ajax局部更新</p>
+<p>​    关键代码：</p>
+<pre><code>function x (){
+//创建一个xmlhttpRequest对象
+var xmlhttp = new XMLHttpRequest();
+//规定请求的类型，URL以及是否异步处理请求 :true表示异步处理
+xmlhttp.open(&quot;GET&quot;,url,true);
+//将请求发送到服务器
+xmlhttp.sent();
+//接收服务器端的响应（readyState=4表示请求已完成且响应已就绪 status=200表示请求响应一切正常）
+xmlhttp.onreadystatechange=function(){
+if(xmlhttp.onreadyState == 4 &amp;&amp; xmlhttp.status ==200){
+    //responseText表示服务器返回给ajax的数据
+    document.getElementById(&quot;xx&quot;).innerHTML  = xmlhttp.responseText;
+}
+}
+}</code></pre>
             </div>
             <hr/>
 
@@ -714,7 +791,7 @@ sos<span class="token punctuation">.</span><span class="token function">close</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shapefire.github.io/posts/3710971821.html">http://shapefire.github.io/posts/3710971821.html</a>
+                    <a href="http://shapefire.github.io/posts/2024902247/">http://shapefire.github.io/posts/2024902247/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -752,8 +829,8 @@ sos<span class="token punctuation">.</span><span class="token function">close</s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/">
-                                    <span class="chip bg-color">验证码</span>
+                                <a href="/tags/JSP/">
+                                    <span class="chip bg-color">JSP</span>
                                 </a>
                             
                         </div>
@@ -798,41 +875,35 @@ sos<span class="token punctuation">.</span><span class="token function">close</s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/911124684.html">
+                <a href="/posts/2807274217/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="设计模式">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="XML">
                         
-                        <span class="card-title">设计模式</span>
+                        <span class="card-title">XML</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            设计模式概述
-设计模式一般包含模式名称、问题、目的、解决方案、效果等组成要素，其中关键要素是模 式名称、问题、解决方案和效果。
-
-GoF设计模式有23个 + 简单工厂模式
-
-学习点
-
-设计模式的意图
-
-解决什么问题，什么时候使用该设计模式
-
+                            XML概述Extensible Markup Language 可扩展标记语言
+允许开发者自由定义标签，可将标签和内容有效分离
+XML不再侧重于数据如何展示，而是更多地关注数据如何存储和传输
+应用场景XML把数据从HTML分离出来
+简化数据
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
+                            <a href="/categories/JavaWeb/" class="post-category">
+                                    JavaWeb
                                 </a>
                             
                             
@@ -842,8 +913,8 @@ GoF设计模式有23个 + 简单工厂模式
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/XML/">
+                        <span class="chip bg-color">XML</span>
                     </a>
                     
                 </div>
@@ -857,40 +928,37 @@ GoF设计模式有23个 + 简单工厂模式
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/2971013733.html">
+                <a href="/posts/3424359953/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="随机字符串验证码实现">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
                         
-                        <span class="card-title">随机字符串验证码实现</span>
+                        <span class="card-title">JavaScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java实现随机字符串验证码  随机生成由大写字母或小写字母或数字或汉字组成的字符串
-随机验证码的优缺点
-优点: 生成方便，识别难易度可调节
-缺点: 识别度不好把握
+                            JavaScript学习js输出
+Window.alert ()警告窗
+Window.alert (‘helloworld’)； 内容用单引号’ ‘   window可省略
 
-随机字符串验证码的实现方式
-Java实现
-过程
+document.write（）写到HTML文档中
 
-用户每次访问页面时随机
+inner
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%AA%8C%E8%AF%81%E7%A0%81/" class="post-category">
-                                    验证码
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -900,8 +968,8 @@ Java实现
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/">
-                        <span class="chip bg-color">验证码</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>

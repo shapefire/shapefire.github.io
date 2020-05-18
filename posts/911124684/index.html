@@ -981,7 +981,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </li>
 <li><p>结构图</p>
 <ul>
-<li><img src="/posts/911124684.htm/911124684/abstractFactoryConstructionImg.PNG" class title="abstractFactoryConstructionImg"></li>
+<li><img src="/posts/911124684/abstractFactoryConstructionImg.PNG" alt="abstractFactoryConstruction"></li>
 <li>​    AbstractFactory（抽象工厂）：它声明了一组用于创建一族产品的方法，每一个方法对应一 种产品</li>
 <li>​    ConcreteFactory（具体工厂）：它实现了在抽象工厂中声明的创建产品的方法，生成一组具 体产品，这些产品构成了一个产品族，每一个产品都位于某个产品等级结构中</li>
 <li>AbstractProduct（抽象产品）：它为每种产品声明接口，在抽象产品中声明了产品所具有的 业务方法</li>
@@ -1233,8 +1233,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 </li>
 <li><p>结构图</p>
-<img src="/posts/911124684.htm/911124684/singletonConstructionImg.PNG" class title="singletonConstructionImg">
-
+<p><img src="/posts/911124684/singletonConstructionImg.PNG" alt="singletonConstruction"></p>
 <ul>
 <li>Singleton（单例）：在单例类的内部实现只生成一个实例，同时它提供一个静态的 getInstance()工厂方法，让客户可以访问它的唯一实例；为了防止在外部对其实例化，将其构 造函数设计为私有；在单例类内部定义了一个Singleton类型的静态对象，作为外部共享的唯一 实例</li>
 </ul>
@@ -1254,8 +1253,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 <h4 id="单例类的两种不同的实现方式："><a href="#单例类的两种不同的实现方式：" class="headerlink" title="单例类的两种不同的实现方式："></a>单例类的两种不同的实现方式：</h4><h5 id="饿汉式单例：实现最简单的单例类"><a href="#饿汉式单例：实现最简单的单例类" class="headerlink" title="饿汉式单例：实现最简单的单例类"></a>饿汉式单例：实现最简单的单例类</h5><ul>
 <li><p>结构图：</p>
-<img src="/posts/911124684.htm/911124684/eagerSingletonConstruction.PNG" class title="singletonConstructionImg">
-
+<p><img src="/posts/911124684/eagerSingletonConstruction.PNG" alt="eagerSingletonConstruction"></p>
 <p>在定义静态变量的时候实例化单例类，因此在<strong>类加载的时候</strong>就已经创建了单例对象</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">EagerSingleton</span>    <span class="token punctuation">{</span>                            <span class="token keyword">private</span>    <span class="token keyword">static</span>    <span class="token keyword">final</span>    EagerSingleton    instance    <span class="token operator">=</span>    <span class="token keyword">new</span>    <span class="token class-name">EagerSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
    <span class="token keyword">private</span>    <span class="token function">EagerSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>    <span class="token punctuation">}</span>            
@@ -1268,8 +1266,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 <h5 id="懒汉式单例类与线程锁定"><a href="#懒汉式单例类与线程锁定" class="headerlink" title="懒汉式单例类与线程锁定"></a>懒汉式单例类与线程锁定</h5><ul>
 <li><p>结构图</p>
-<img src="/posts/911124684.htm/911124684/lazySingletonConstruction.PNG" class title="lazySingletonConstruction">
-
+<p><img src="/posts/911124684/lazySingletonConstruction.PNG" alt="lazySingletonConstruction"></p>
 <p>懒汉式单例在第一次调用getInstance()方法时实例化，在类加载时并不自 行实例化，这种技术又称为<strong>延迟加载(Lazy    Load)技术</strong>，即<strong>需要的时候再加载实例</strong>，为了避免多个线程同时调用getInstance()方法，使用关键字<strong>synchronized</strong></p>
 <ul>
 <li><p><strong>延迟加载技术</strong>（Lazy Load）</p>
@@ -1554,8 +1551,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 </li>
 <li><p>结构图</p>
-<img src="/posts/911124684.htm/911124684/prototypeConstructionImg.PNG" class title="prototypeConstructionImg">
-
+<p><img src="/posts/911124684/prototypeConstructionImg.PNG" alt="prototypeConstruction"></p>
 <p>Prototype（抽象原型类）：它是声明克隆方法的接口，是所有具体原型类的公共父类，可以 是抽象类也可以是接口，甚至还可以是具体实现类</p>
 <p>ConcretePrototype（具体原型类）：它实现在抽象原型类中声明的克隆方法，在克隆方法中 返回自己的一个克隆对象。</p>
 <p>Client（客户类）：让一个原型对象克隆自身从而创建一个新的对象，在客户类中<strong>只需要直接实例化或通过工厂方法等方式创建一个原型对象，再通过调用该对象的克隆方法即可得到多个相同的对象</strong>。由于客户类针对抽象原型类Prototype编程，因此用户可以根据需要选择具体原型类，系统具有较好的可扩展性，增加或更换具体原型类都很方便。</p>
@@ -2101,8 +2097,7 @@ com.designPattern.prototype.currencyClone.ConcreteResume@6d06d69c*/</span>
 <p>建造者模式的定义：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可 以创建不同的表示。建造者模式是一种对象创建型模式。</p>
 </li>
 <li><p>结构图</p>
-<img src="/posts/911124684.htm/911124684/builderConstructionImg.PNG" class title="builderConstructionImg">
-
+<p><img src="/posts/911124684/builderConstructionImg.PNG" alt="builderConstruction"></p>
 <p>Builder（抽象建造者）：它为创建一个产品Product对象的各个部件指定抽象接口，在该接 口中一般声明两类方法，<strong>一类方法是buildPartX()</strong>，它们用于创建复杂对象的各个部件；<strong>另一 类方法是getResult()</strong>，它们用于返回复杂对象。Builder既可以是抽象类，也可以是接口</p>
 <p>ConcreteBuilder（具体建造者）：它实现了Builder接口，<strong>实现各个部件的具体构造和装配方法</strong>，定义并明确它所创建的复杂对象，也可以提供一个方法返回创建好的复杂产品对象。</p>
 <p>Product（产品角色）：它是<strong>被构建的复杂对象</strong>，包含多个组成部件，具体建造者创建该产品 的内部表示并定义它的装配过程。</p>
@@ -2990,7 +2985,7 @@ Product    product    <span class="token operator">=</span>    director<span cla
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shapefire.github.io/posts/911124684.html">http://shapefire.github.io/posts/911124684.html</a>
+                    <a href="http://shapefire.github.io/posts/911124684/">http://shapefire.github.io/posts/911124684/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -3074,7 +3069,7 @@ Product    product    <span class="token operator">=</span>    director<span cla
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1821512031.html">
+                <a href="/posts/1821512031/">
                     <div class="card-image">
                         
                         
@@ -3124,7 +3119,7 @@ Product    product    <span class="token operator">=</span>    director<span cla
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3710971821.html">
+                <a href="/posts/3710971821/">
                     <div class="card-image">
                         
                         

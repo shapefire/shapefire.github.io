@@ -427,12 +427,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">
+                                <span class="chip bg-color">注解反射机制</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java/" class="post-category">
+                                java
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -885,6 +898,7 @@ C-->D(Bootstap ClassLoader)</pre>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span></code></pre>
 <p>双亲委派机制流程图</p>
+<p><img src="/posts/2009398734/ClassLoader.PNG" alt="ClassLoader.PNG"></p>
 <h5 id="双亲委派机制的作用"><a href="#双亲委派机制的作用" class="headerlink" title="双亲委派机制的作用"></a>双亲委派机制的作用</h5><p>1、防止重复加载同一个<code>.class</code>。通过委托去向上查找，加载过了，就不用再加载一遍。保证数据安全。<br> 2、保证核心<code>.class</code>不能被篡改。通过委托方式，不会去篡改核心<code>.clas</code>，即使篡改也不会去加载，即使加载也不会是同一个<code>.class</code>对象了。<strong>不同的加载器加载同一个<code>.class</code>也不是同一个<code>Class</code>对象</strong>。这样<strong>保证了<code>Class</code>执行安全</strong>。</p>
 <h4 id="获取类运行时类的完整结构"><a href="#获取类运行时类的完整结构" class="headerlink" title="获取类运行时类的完整结构"></a>获取类运行时类的完整结构</h4><pre class=" language-java"><code class="language-java">  Class <span class="token class-name">c1</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"com.reflection.Student"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//获取类名</span>
@@ -1178,7 +1192,7 @@ C-->D(Bootstap ClassLoader)</pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shapefire.github.io/posts/2009398734.html">http://shapefire.github.io/posts/2009398734.html</a>
+                    <a href="http://shapefire.github.io/posts/2009398734/">http://shapefire.github.io/posts/2009398734/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1215,7 +1229,11 @@ C-->D(Bootstap ClassLoader)</pre>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">
+                                    <span class="chip bg-color">注解反射机制</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1259,7 +1277,7 @@ C-->D(Bootstap ClassLoader)</pre>
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/posts/2009398734.html">
+                <a href="/posts/2009398734/">
                     <div class="card-image">
                         
                         
@@ -1284,13 +1302,25 @@ C-->D(Bootstap ClassLoader)</pre>
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            ShapeFire
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">
+                        <span class="chip bg-color">注解反射机制</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1301,7 +1331,7 @@ C-->D(Bootstap ClassLoader)</pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3661501281.html">
+                <a href="/posts/3661501281/">
                     <div class="card-image">
                         
                         

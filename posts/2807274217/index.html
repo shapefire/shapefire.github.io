@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java线程, ShapeFanBlog">
-    <meta name="description" content="Java多线程进程：可执行的程序并存放在计算机存储器的一个指令序列，是动态执行的过程
-线程：线程是比进程还要小的运行单位，一个进程包含多个线程
-​        线程之间是交互运行的状态
-线程的创建
-创建一个Thread 类，或者一个Thr">
+    <meta name="keywords" content="XML, ShapeFanBlog">
+    <meta name="description" content="XML概述Extensible Markup Language 可扩展标记语言
+允许开发者自由定义标签，可将标签和内容有效分离
+XML不再侧重于数据如何展示，而是更多地关注数据如何存储和传输
+应用场景XML把数据从HTML分离出来
+简化数据">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java线程 | ShapeFanBlog</title>
+    <title>XML | ShapeFanBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java线程</h1>
+                    <h1 class="description center-align post-title">XML</h1>
                 </div>
             </div>
         </div>
@@ -429,8 +429,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B9%B6%E5%8F%91/">
-                                <span class="chip bg-color">并发</span>
+                            <a href="/tags/XML/">
+                                <span class="chip bg-color">XML</span>
                             </a>
                         
                     </div>
@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-05
+                    2020-04-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2020-05-06
                 </div>
                 
                 <!--添加作者信息-->
@@ -473,14 +473,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    8 分
                 </div>
                 
 
@@ -491,191 +491,292 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java多线程"><a href="#Java多线程" class="headerlink" title="Java多线程"></a>Java多线程</h1><p>进程：可执行的程序并存放在计算机存储器的一个指令序列，是<strong>动态执行的过程</strong></p>
-<p>线程：线程是比进程还要小的运行单位，一个进程包含多个线程</p>
-<p>​        线程之间是交互运行的状态</p>
-<h2 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建"></a>线程的创建</h2><ul>
-<li><p>创建一个Thread 类，或者一个Thread子类的对象</p>
-<p>Thread是一个线程类，位于java.lang包下     </p>
-<p>常用方法：run() ;start() —&gt;每个线程的start方法只能启动一次;sleep(); join() –&gt;优先执行调用join()方法的线程</p>
-</li>
-<li><p>创建一个实现Runnabke接口的类的对象</p>
-<p>Runnable接口：</p>
-<ul>
-<li>只有一个run（）方法</li>
-<li>Runnable是JAVA中用来实现线程的接口</li>
-<li><strong>任何实现线程功能的类都必须实现该接口</strong></li>
-</ul>
-</li>
-<li><p>通过继承Thread类的方式创建线程类，重写run方法</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">"该线程正在运行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"主线程1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        MyThread mt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        mt<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//启动线程  start方法只能调用一次</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"主线程2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment" spellcheck="true">//输出结果  输出结果随机</span>
-主线程<span class="token number">1</span>
-主线程<span class="token number">2</span>
-Thread<span class="token operator">-</span><span class="token number">0</span> 该线程运行 
-
-<span class="token comment" spellcheck="true">//结果分析</span>
-主方法线程先输出，自定义线程mt后输出 <span class="token punctuation">;</span>准确的说输出结果的顺序是随机的<span class="token punctuation">;</span>线程之间是交互运行的状态</code></pre>
-</li>
-<li><p>通过实现Runnable接口</p>
-<ul>
-<li>实现Runnable接口的原因：Java不支持多继承；不打算重写Thread的方法</li>
-</ul>
-<pre><code>class PrintRunnable implements Runnable{
-    @Override
-    public void run(){
-            System.out.println(Thread.currentThread().getName +&quot;正在运行&quot;));
-    }
-}
-public class ThreadTest(){
-    public static void main(String[] args){
-        PrintRunnable pr = new PrintRunnable();
-        Thread t1 = new Thread(pr);
-        t1.start();
-    }
-}</code></pre></li>
-</ul>
-<h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><ul>
-<li>新建（new）</li>
-<li>可运行（Runnable） 也称就绪转态</li>
-<li>正在运行（Running）</li>
-<li>阻塞（Blocked）</li>
-<li>终止（Dead）</li>
-</ul>
-<h2 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h2><p>创建线程对象  （新建 new） – start()–&gt; (可运行Runnable) &lt; – 时间片用完  —–  获取cpu使用权–&gt;(正在运行Running) — join();wait();sleep();I/O请求 —&gt;（阻塞Blocked）</p>
-<p>阻塞状态（Blocked）<strong>不可直接退回</strong>Running状态 </p>
-<p>阻塞状态（Blocked） —&gt;Runnable   : 1.等待调用join()的线程执行完毕；2.notify()或notifyAll(); 3.sleep 超时； 4. I/O请求完成</p>
-<p>Running  —&gt;Dead : 线程执行完毕或异常终止 </p>
-<p>任何状态都可用 stop() 转化为 Dead 状态，在java中已不建议使用stop()</p>
-<h2 id="方法应用"><a href="#方法应用" class="headerlink" title="方法应用"></a>方法应用</h2><p>Thread 类的sleep()方法:  public <strong>static</strong> void <strong>sleep</strong>(long millis)   休眠</p>
-<p>​    调用sleep 方法 需捕获InterruptedException异常</p>
-<p>Thread 类的join()方法:  public <strong>final</strong> void <strong>join</strong>()   等待调用该方法的线程结束后才能执行</p>
-<p>​    调用join 方法 需捕获InterruptedException异常</p>
-<p>Thread 类的join()方法:  public <strong>final</strong> void <strong>join</strong>(llong millis)  等待调用线程终止的最长时间为mills毫秒</p>
-<p>​    wait()方法：中断方法的执行，使线程等待</p>
-<p>​    notify方法：唤醒处于等待的某一个线程，使其结束等待</p>
-<p>​    nitifyAll()方法：唤醒<strong>所有</strong>处于等待的线程，使它们结束等待</p>
-<h2 id="线程优先级"><a href="#线程优先级" class="headerlink" title="线程优先级"></a>线程优先级</h2><p>Java为线程类提供了10 个优先级 ，优先级可用整数1-10 表示，超过范围会抛出异常</p>
-<p>主线程默认优先级为5 ，数字越高 优先级越高</p>
-<ul>
-<li>优先级常量( Thread类的常量)<ol>
-<li>MAX_PRIORITY</li>
-<li>MIN_PRIORITY</li>
-<li>NORM_PRIORITY    优先级：5</li>
+                <h1 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Extensible Markup Language 可扩展标记语言</p>
+<p>允许开发者自由定义标签，可将标签和内容有效分离</p>
+<p>XML不再侧重于数据如何展示，而是更多地关注数据如何存储和传输</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>XML把数据从HTML分离出来</p>
+<p>简化数据共享</p>
+<p>简化数据的传输</p>
+<p>简化平台的变更</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>简单易用的标记语言</p>
+<p>严格的格式</p>
+<p>数据逻辑和显示逻辑分离    HTML注重显示，XML着重数据存储</p>
+<h2 id="文档规则"><a href="#文档规则" class="headerlink" title="文档规则"></a>文档规则</h2><p>整体结构：</p>
+<ol>
+<li>有且只有一个根元素</li>
+<li>元素必须合理结束</li>
+<li>元素之间必须合理嵌套</li>
+<li>元素的属性必须有值</li>
 </ol>
+<p>XML声明：<?xml version="1.0" encoding="GB2312"  standalone="yes" ?></p>
+<p>字符集：</p>
+<ol>
+<li>简体中文：GBK 或GB2312</li>
+<li>繁体中文：BIG5</li>
+<li>西欧字符：ISO8859-1</li>
+<li>通用的国际编码：Unicode</li>
+<li>针对Unicode 的可变长度字符编码：UTF8</li>
+</ol>
+<p>练习：</p>
+<p>编写第一个XML文件：存储图书信息</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8" ?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>书籍列表</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>计算机书籍</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>书名</span><span class="token punctuation">></span></span>java基础<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>书名</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>作者</span><span class="token punctuation">></span></span>xx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>作者</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>价格</span><span class="token punctuation">></span></span>56.00<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>价格</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>计算机书籍</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>计算机书籍</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>书名</span><span class="token punctuation">></span></span>java进阶<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>书名</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>作者</span><span class="token punctuation">></span></span>xx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>作者</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>价格</span><span class="token punctuation">></span></span>86.00<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>价格</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>计算机书籍</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--空元素示例--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>名著</span> <span class="token attr-name">书名</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>三国<span class="token punctuation">"</span></span> <span class="token attr-name">价格</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>45.00<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>书籍列表</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="字符数据"><a href="#字符数据" class="headerlink" title="字符数据"></a>字符数据</h2><p>   开始标签和结束标签之间的文本可以是任何的Unicode字符，并且其间的任何字符都将忠实地传递给XML处理程序</p>
+<p>​    文本字符串不能包含一些特殊的字符，例如 &lt; 或 &amp; ，这些符号在xml文档中有特殊含义，引起文档混乱（只有上面两个符号才会引起文档混乱）</p>
+<h3 id="处理XML文档的特殊字符"><a href="#处理XML文档的特殊字符" class="headerlink" title="处理XML文档的特殊字符"></a>处理XML文档的特殊字符</h3><ol>
+<li><p>使用实体引用（表中的实体引用都需要添加分号才是正确表达）</p>
+<table>
+<thead>
+<tr>
+<th align="center">实体引用</th>
+<th align="center">所代表符号</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;lt</td>
+<td align="center">&lt;</td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">&amp;gt</td>
+<td align="center">&gt;</td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">&amp;amp</td>
+<td align="center">&amp;</td>
+<td align="center">and符号</td>
+</tr>
+<tr>
+<td align="center">&amp;apos</td>
+<td align="center">‘</td>
+<td align="center">英文单引号</td>
+</tr>
+<tr>
+<td align="center">&amp;quot</td>
+<td align="center">“</td>
+<td align="center">英文双引号</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>使用CDATA标记</p>
+<p>在特殊标记CDATA下，所有的特殊字符，甚至是有效的元素都将被当成简单字符处理，实体引用也会失去作用，变成纯文本</p>
+<p>语法：<!--[CDATA[文本内容]]--></p>
+</li>
+</ol>
+<h3 id="W3C对于属性的使用建议"><a href="#W3C对于属性的使用建议" class="headerlink" title="W3C对于属性的使用建议"></a>W3C对于属性的使用建议</h3><p>​    属性通常提供属于数据组成部分的信息，如果属性值里包含的信息是该实体本身，则应该使用子元素来制定该信息，因此，W3C推荐<strong>尽量使用子元素</strong>从而<strong>避免使用属性</strong></p>
+<h2 id="XML命名空间"><a href="#XML命名空间" class="headerlink" title="XML命名空间"></a>XML命名空间</h2><p> 使用原因：在同一份文档中可能出现多个同名的元素和属性</p>
+<p> 语法：xmlns[:prefix] = “命名空间字符串”  </p>
+<pre><code>     命名空间就是给元素指定一个使用区间</code></pre><p> 特征：</p>
+<ol>
+<li>名字很长（命名空间往往是一个绝对的Url地址）</li>
+<li>名字里往往包含英文冒号、斜线等特殊字符</li>
+</ol>
+<p>通常情况下，由于属性是某个元素的，因此很自然地认为属性总是属于他所在元素所处的命名空间，一般<strong>无须专门为属性指定命名空间</strong></p>
+<h2 id="XPath语言"><a href="#XPath语言" class="headerlink" title="XPath语言"></a>XPath语言</h2><p> 一门专门<strong>用于在XML文档中查找信息</strong>的语言，其他XML程序可利用XPath在XML文档中对元素和属性进行导航</p>
+<p>查找标签和属性的原因：XML文档是用来存储数据的，需要将数据提取出来使用，所以通过查找标签和属性进一步获取数据</p>
+<p>Xpath 节点：</p>
+<p>​    文档根节点，元素节点，属性节点，注释节点，命名空间节点，文本节点</p>
+<h3 id="基本概念："><a href="#基本概念：" class="headerlink" title="基本概念："></a>基本概念：</h3><p>​    基本值（原子值）：专门用于表示简单的数据值，例如整数值，字符串等，可以<strong>把基本值当成没有父节点且没有子节点</strong>的节点</p>
+<p>​    项：是XPath 2.0提出的术语，<strong>一个项代表一个节点或基本值</strong></p>
+<p>​    节点集和序列：在某些情况下，XPath表达式可以表示多个节点，多个节点组合在一起在XPath1.0中称为节点集 ；XPath2.0 的序列代表一个普通的项，也可以是节点集</p>
+<p>​    节点关系：父节点，子节点，兄弟节点，祖先节点，后代节点</p>
+<p>​    XPath支持相对路径和绝对路径  ；绝对路径以 斜线开头，而相对路径则不会以 斜线开头</p>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><ol>
+<li><p>XPath使用路径表达式来定位XML文档中的节点</p>
+</li>
+<li><p>Xpath中的中步的完整语法格式：轴::节点测试[限定谓语]</p>
+<p>轴：XPath的步使用轴来定义所选节点与当前节点之间的结构关系</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>轴名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ancestor</td>
+<td>祖先节点</td>
+</tr>
+<tr>
+<td>ancestor-or-self</td>
+<td>祖先节点并包含自身</td>
+</tr>
+<tr>
+<td>attribute</td>
+<td>选择节点的所有属性</td>
+</tr>
+<tr>
+<td>child</td>
+<td>选取当前节点的所有子节点</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>选取当前节点的父节点</td>
+</tr>
+<tr>
+<td>descendant</td>
+<td>当前节点的所有后代节点</td>
+</tr>
+<tr>
+<td>descendant-or-self</td>
+<td>当前节点的所有后代节点包含自身</td>
+</tr>
+<tr>
+<td>self</td>
+<td>当前节点自身</td>
+</tr>
+<tr>
+<td>following-sibling</td>
+<td>选择当前节点的兄弟节点</td>
+</tr>
+</tbody></table>
+<p>​    节点测试：用于从指定轴所匹配的节点集中选出特定的节点</p>
+<table>
+<thead>
+<tr>
+<th>节点测试名称</th>
+<th>含义</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nodename</td>
+<td>指从轴匹配的所有节点中选出具有nodename的节点</td>
+<td>child::book</td>
+</tr>
+<tr>
+<td>node()</td>
+<td>选择指定轴匹配的所有类型节点</td>
+<td>child::node()</td>
+</tr>
+<tr>
+<td>text()</td>
+<td>选择指定轴匹配的所有文本类型节点</td>
+<td>chile::text()</td>
+</tr>
+<tr>
+<td>comment()</td>
+<td>选择指定轴匹配的所有注释节点</td>
+<td>descendant::commet()</td>
+</tr>
+<tr>
+<td>*</td>
+<td>通配符，不进行任何过滤</td>
+<td>child::*</td>
+</tr>
+</tbody></table>
+<p>​     限定谓语：是一个Boolean表达式，或者可以转换为Boolean值的表达式，用于进一步提炼所选的节点集。</p>
+<p>​        语法：child::book[1]或child::book[position()=1]</p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p> 比较运算符</p>
+<p>逻辑运算符：or  ；and</p>
+<p>组合多个路径的运算符：通过“|”运算符，可以一次选取若干个路径 </p>
+<p>​        例如：book[position()=1] | name[position()=last()]</p>
+<p>节点相关的常见函数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fn:position()</td>
+<td>返回当前正在被处理的节点在父节点中的index值</td>
+</tr>
+<tr>
+<td>fn:last()</td>
+<td>返回当前正在被处理的节点列表中项的数目</td>
+</tr>
+<tr>
+<td>fn:name()</td>
+<td>返回当前节点的名称或指定节点集中第一个节点的名称</td>
+</tr>
+<tr>
+<td>fn:root()</td>
+<td>通常返回文档根节点</td>
+</tr>
+</tbody></table>
+<h2 id="DOM，SAX和JAXP解析"><a href="#DOM，SAX和JAXP解析" class="headerlink" title="DOM，SAX和JAXP解析"></a>DOM，SAX和JAXP解析</h2><h3 id="XML文档解析方式"><a href="#XML文档解析方式" class="headerlink" title="XML文档解析方式"></a>XML文档解析方式</h3><p>DOM：文档对象模型，有W3C推荐的处理XML文档的规范</p>
+<p>SAX（Simple API for XML）：整个XML行业的事实规范</p>
+<h3 id="解析原理"><a href="#解析原理" class="headerlink" title="解析原理"></a>解析原理</h3><p>   XML 文档   ——》 XML解析器 ——–》 解析结果</p>
+<p>​    Java解析XML文档的API称为<strong>JAXP</strong>(Java api for xml)</p>
+<p>​    JAXP<strong>只是允许</strong>应用程序在不同的XML解析器之间切换</p>
+<p>​    JAXP提供的与解析相关的类：</p>
+<pre><code> 1. DocumentBuildFactory : 获取DOM解析工程类
+ 2. DocumentBuilder：DOM解析器的标准接口
+ 3. SAXParserFactory:获取SAX解析器的工程类
+ 4. SAXParser:SAX解析器的标准接口</code></pre><h4 id="JAXP的SAX支持："><a href="#JAXP的SAX支持：" class="headerlink" title="JAXP的SAX支持："></a>JAXP的SAX支持：</h4><ul>
+<li><p>SAX的处理机制：采用<strong>事件机制的方式</strong>解析XML文档 ，快速读写的方式</p>
+<p>SAX解析器触发一系列事件，而事件由对应的事件监听器监听，从而触发事件的处理方法，实现对xml文件的访问</p>
 </li>
 </ul>
-<p>获取优先级： getPriority（）</p>
-<p>设置线程优先级： setPriority(int newPriority)</p>
-<h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p>多线程运行问题</p>
 <ul>
-<li>各个线程是通过竞争CPU时间而获得运行机会</li>
-<li>各线程什么时候得到CPU时间，占用多久，是不可预测</li>
-<li>一个正在运行着的线程在什么地方被暂停也是不可确定</li>
+<li><p>SAX解析XML文档的流程</p>
+<p>SAX解析器负责在xml文档中“行走”，每当遇到文档开始，元素开始，文本，元素结束和文档结束时，都将负责向外发送事件，而程序员负责提供事件监听器来监听这些事件，并通过事件获取XML文档信息</p>
+</li>
+<li><p>JAXP为SAX解析器提供2组API</p>
+<ul>
+<li><p>XMLReader和XMLReaderFactory:</p>
+<p>createXMLReader()静态方法用于创建XMLReader    （工厂模式）</p>
+</li>
+<li><p>SAXParser和SAXPraserFactory:(常用  比较方便)</p>
+<p>工厂类中的newSAXParser（）实例方法用于创建SAXParser</p>
+</li>
 </ul>
-<p>例子：某一银行有存款和取款操作，为了保证在存款或取款的时候，不允许其他线程对账户余额进行修改的操作；所以需要将Bank对象锁定，将使用<strong>关键字synchronized 实现</strong> ，确保共享对象在同一时刻只能被一个线程访问。</p>
-<p>​    synchronized关键字可以用在 <strong>成员方法</strong>；<strong>静态方法</strong>；<strong>语句块</strong></p>
-<h2 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h2><p>问题：银行系统中账户余额不够 怎么处理？</p>
-<p>解决：  生产者（Producer类进行数据的生产）  ——–》 Queue类 n( x)  ———》 消费者（Comsumer类进行数据的存取）   遵守： 生产一个数据，存读取（消费）一个数据</p>
-<pre><code>public class Queue{
-    private int n;
-    Boolean flag = flase;//保证生产一个消费一个而产生的标记变量 true代表
-
-    public synchronized int getN(){
-        if(！flag){
-            try{
-                wait();
-            }catch( InterruptedExcrption e){
-                e.printStackTrace();
-            }
-        }
-        System.out.println(&quot;消费：&quot;+ n) ;
-        flag  = false;//消费完毕，容器内没有数据
-        notifyAll();
-        return n;
-    }
-    public synchronized void setN(int n){
-        if(flag){
-            try{
-                wait();
-            }catch( InterruptedExcrption e){
-                e.printStackTrace();
-            }
-        }
-        System.out.println(&quot;生产：&quot;+ n) ;
-        this.n = n;
-        flag = true ;//生产完毕，容器内有数据
-        notifyAll();
-    }
-}
-
-
-public class Producer implements Runnable{
-    Queue queue;
-    Producer(Queue queue){
-        this.queue = queue;
-    }
-    @override
-    public void run(){
-        int i =0;
-        while(true){
-            queue.set(i++);
-            try{
-                Thread.sleep(1000);
-            }catch( InterruptedExcrption e){
-                e.printStackTrace();
-            }
-        }
-    }
-}
-
-public class Consumer implements Runnable(){
-    Queue queue;
-    Producer(Queue queue){
-        this.queue = queue;
-    }
-    @override
-    public void run(){
-        while(true){
-            queue.get(i);
-            try{
-                Thread.sleep(1000);
-            }catch( InterruptedExcrption e){
-                e.printStackTrace();
-            }
-        }
-    }
-}
-
-public class Test{
-    public statiic void main(String[] args){
-        Queue queue=new Queue();
-        new Thread(new Producer(queue)).start();
-        new Thread(new Producer(Consumer).start();
-    }
-}
-
-
-//输出结果
-生产：1
-消费：1
-生产：2
-消费：2
-。。。
-。。。</code></pre><p>​                                                                                                                                                          </p>
+</li>
+<li><p>SAX解析事件</p>
+<ul>
+<li>ContentHandler：监听XML文档内容处理事件的监听器</li>
+<li>DTDHandler：监听DTD处理事件的监听器</li>
+<li>EntityHandler：监听实体处理事件的监听器</li>
+<li>ErrorHandler：监听解析错误的监听器</li>
+</ul>
+</li>
+<li><p>JAXP提供的DefaultHandler类</p>
+<p>该类实现了上述的4个监听器接口，并为监听器接口所包含的方法提供了空实现</p>
+</li>
+<li><p>SAX解析XML文档的实现思路</p>
+<ul>
+<li>在工程中引入Xerces-J具体解析器实现类Jar包</li>
+<li>自定义事件监听器接口继承自DefaultHandler</li>
+<li>通过SAXParserFactory 的newInstance() 方法创建SAX解析器工厂对象</li>
+<li>通过SAXParserFactory 对象的newSAXparser（）方法创建SAXParser解析器对象</li>
+<li>调用SAXParser对象的parse（）方法解析XML文档</li>
+</ul>
+</li>
+<li><p>SAX生成XML文档的实现思路</p>
+<ul>
+<li><p>创建保存xml的结果流对象 : Result对象：Result resultxx = new StreamResult(File file); </p>
+</li>
+<li><p>获取sax生成工厂对象实例    ：SAXTransfromerFactory xxSTF =SAXTransfromerFactory.newInstance() </p>
+</li>
+<li><p>获取sax生成处理者对象实例 ：TransformerHandler xxTH =   xxSTF.newTransformerHandler(); xxTH.setResult( resultxx) </p>
+</li>
+<li><p>获取sax生成器    ：  Transformer xxtransformer =  xxTH.getTransformer();</p>
+<p>xxtransformer.setOutputProperty(OurputKeys.INDENT,”yes”)   </p>
+</li>
+<li><p>生成文档及文档中的元素 ： 使用transfromerHandler 对象方法</p>
+</li>
+</ul>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -701,7 +802,7 @@ public class Test{
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shapefire.github.io/posts/3268049553.html">http://shapefire.github.io/posts/3268049553.html</a>
+                    <a href="http://shapefire.github.io/posts/2807274217/">http://shapefire.github.io/posts/2807274217/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -739,8 +840,8 @@ public class Test{
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B9%B6%E5%8F%91/">
-                                    <span class="chip bg-color">并发</span>
+                                <a href="/tags/XML/">
+                                    <span class="chip bg-color">XML</span>
                                 </a>
                             
                         </div>
@@ -785,37 +886,39 @@ public class Test{
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/3424359953.html">
+                <a href="/posts/1406167115/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux">
                         
-                        <span class="card-title">JavaScript</span>
+                        <span class="card-title">Linux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaScript学习js输出
-Window.alert ()警告窗
-Window.alert (‘helloworld’)； 内容用单引号’ ‘   window可省略
+                            Linux阿里云服务器：
+设置安全组：用来开启端口，否则外部无法访问（端口映射）
 
-document.write（）写到HTML文档中
+获取服务器的公网ip地址；修改实例名称和密码，第一次修改需要重启，使用xshell远程连接
 
-inner
+搭建环境：
+
+傻瓜式（宝塔面板）
+https://www.bt
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -825,8 +928,8 @@ inner
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -840,32 +943,35 @@ inner
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1821512031.html">
+                <a href="/posts/2024902247/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Spring">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="JSP">
                         
-                        <span class="card-title">Spring</span>
+                        <span class="card-title">JSP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SpringIOC(inversion of control):  对象有Spring容器创建，对象属性是Spring容器来设置
-控制的内容：指谁来控制对象的创建；传统的应用程序是由程序本身控制，使用Spring后，由Spring来创建对象
+                            JSP（Java Server Page）根本：简化的Servlet设计
+JSP是在传统的网页HTML文件中插入Java程序段（Scriptlet)和JSP标记（tag) 
+JSP开发的web应用是跨平台
+动态项目的结构
+java Reso
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SSM/" class="post-category">
-                                    SSM
+                            <a href="/categories/JavaWeb/" class="post-category">
+                                    JavaWeb
                                 </a>
                             
                             
@@ -875,8 +981,8 @@ inner
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring/">
-                        <span class="chip bg-color">Spring</span>
+                    <a href="/tags/JSP/">
+                        <span class="chip bg-color">JSP</span>
                     </a>
                     
                 </div>
