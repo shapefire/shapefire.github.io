@@ -1,0 +1,1377 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="JSP, ShapeFanBlog">
+    <meta name="description" content="JSP（Java Server Page）根本：简化的Servlet设计
+JSP是在传统的网页HTML文件中插入Java程序段（Scriptlet)和JSP标记（tag) 
+JSP开发的web应用是跨平台
+动态项目的结构
+java Reso">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>JSP | ShapeFanBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">ShapeFanBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">ShapeFanBlog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/shapefire" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/shapefire" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">JSP</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JSP/">
+                                <span class="chip bg-color">JSP</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaWeb/" class="post-category">
+                                JavaWeb
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-10
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-05-06
+                </div>
+                
+                <!--添加作者信息-->
+                  <div class="info-break-policy">
+                    
+                        <i class="fa fa-pencil"></i> 作者: ShapeFire
+                    
+                </div>
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    412
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
+
+                
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="JSP（Java-Server-Page）"><a href="#JSP（Java-Server-Page）" class="headerlink" title="JSP（Java Server Page）"></a>JSP（Java Server Page）</h1><p>根本：简化的Servlet设计</p>
+<p>JSP是在传统的网页HTML文件中插入Java程序段（Scriptlet)和JSP标记（tag) </p>
+<p>JSP开发的web应用是跨平台</p>
+<h2 id="动态项目的结构"><a href="#动态项目的结构" class="headerlink" title="动态项目的结构"></a>动态项目的结构</h2><ul>
+<li>java Resource  包含项目的java源码</li>
+<li>WebContent 所有的web资源（包括HTML,JSP和图形文件等）的指定位置</li>
+<li>WEB-INF 对于Web应用程序，此目录包含支持的web资源，包含web.xml以及classes和lib目录</li>
+<li>/classes  Java编译器产生的类文件输出目录。应用程序类载入器使用此目录中的类来装载运行时所需要的功能</li>
+<li>/lib 包含web应用程序所引用的支持性JAR文件，是综和的资源文件目录</li>
+<li>web.xml  核心文件  标准的web应用程序部署描述符</li>
+</ul>
+<h2 id="JSP程序的执行过程"><a href="#JSP程序的执行过程" class="headerlink" title="JSP程序的执行过程"></a>JSP程序的执行过程</h2><p>客户端用过游览器将.jsp文件发送到web服务器，读取.jsp文件 生成.java文件（Servelet源程序），.java文件编译成.class文件，服务器读取.class文件后返回给用户的是html网页</p>
+<h2 id="JSP基本语法"><a href="#JSP基本语法" class="headerlink" title="JSP基本语法"></a>JSP基本语法</h2><p>JSP声明语法：<strong>&lt;%!</strong>  String str = “hello “ ; <strong>%&gt;</strong>    通常声明全局变量、常量、方法、类</p>
+<ul>
+<li>定义成员变量，以及成员方法</li>
+<li>不能直接包含程序语句  &lt;%!  out.print(“hello”); %&gt;    ×   </li>
+</ul>
+<p>JSP程序脚本：<strong>&lt;%</strong> out.print(“hello”); <strong>%&gt;</strong>   其中可包含局部变量、java语句</p>
+<ul>
+<li>包括变量的声明，表达式和程序逻辑</li>
+<li>声明的变量转换为_service 方法中的变量，因而是<strong>局部变量</strong></li>
+<li>语句块可以自由地与页面代码组合使用</li>
+</ul>
+<p>编程练习  ：输出1到100 的和</p>
+<pre class=" language-jsp"><code class="language-jsp"><%! int sum =0;%>
+<span>1到10的和=</span>
+<% for(int i = 1;i<101;i++){
+        sum+= i;
+    }
+%>
+<%=sum %></code></pre>
+<p>JSP注释： &lt;%– –%&gt; 和 java注释</p>
+<p>JSP内容表达式  <strong>&lt;%=</strong>i <strong>%&gt;</strong></p>
+<p>编程练习：在JSP页面中根据x的值进行判断并得出y的值，并将结果在游览器中居中显示</p>
+<p>   y= {  -1 (x&lt;0)    0 (x=0)  1(x&gt;0) }   输出内容: 当x&lt;0时 ，输出  x= -5   y = -1</p>
+<pre class=" language-jsp"><code class="language-jsp"><%! int x = -8;
+    int y;%>
+
+<%if(x<0){
+%>
+<p style="text-align:center">当x<0时</p> 
+<% y=-1;
+}
+ else if(x== 0 ){
+%>
+<p style="text-align:center">当x=0时</p> 
+<% y=0;}
+else {
+%>
+<p style="text-align:center">当x>0时</p> 
+<% y=1;}
+%>
+<% out.println(); %>
+<p style="text-align:center">x=<%=x %></p>
+<%out.println();%>
+<p style="text-align:center">y=<%=y %></p></code></pre>
+<p>JSP包引入 &lt;%@page import =”java.util.Date” %&gt; 不同的包引用可用逗号隔开，作为整体字符串</p>
+<h2 id="JSP内置对象和四种作用域"><a href="#JSP内置对象和四种作用域" class="headerlink" title="JSP内置对象和四种作用域"></a>JSP内置对象和四种作用域</h2><p>Http协议 ： http请求  http响应</p>
+<p>请求与响应模式：</p>
+<p>在JSP中请求和响应对象是通过内置对象存在的</p>
+<p>内置对象（又叫隐含对象，有9个内置对象）：不需要预先声明就可以在脚本代码和表达式中随意使用</p>
+<p>作用域：pageContext，request，session，application</p>
+<p><strong>request对象</strong>：封装了由web游览器或其他客户端生成的HTTP请求的细节（参数，属性，头标和数据） </p>
+<p>​            作用域：用户的请求周期（在相邻两个web资源之间共享同一个request请求对象时使用）</p>
+<p><strong>out</strong>:代表输出流的对象</p>
+<p><strong>response</strong>：封装了返回到Http客户端的输出，向页面作者提供设置响应头标和状态码的方式</p>
+<p><strong>pageContext</strong> ：提供转发请求到其他资源和包含其他资源的方法，提供获取其他内置对象的方法</p>
+<pre><code>1. forward方法来完成请求的转发 
+ 2. include 方法    include动态指令 ：添加某一模块部分的jsp页面    完成页面的包含关系
+ 3. pagecontext可以获取其他的内置对象。getRequest，getSession...</code></pre><p> page：代表了正在运行的由JSP文件产生的类对象</p>
+<p>pageContext的作用域：当前执行页</p>
+<p><strong>Session</strong>:主要用于跟踪会话</p>
+<p>​    会话：代表用户第一次进入当前系统知道退出系统或关闭游览器，在此期间与服务器的一系列交互。</p>
+<p>​    作用域：会话期间</p>
+<p> 设置Session的有效时间：session。setMaxInactiveInterval(int second) </p>
+<p>​    该方法常见于：登录一个系统页面后，若几分钟没有操作将需要重新登录</p>
+<p><strong>Config</strong>：获取配置信息</p>
+<p><strong>exception:</strong>异常对象  只能在错误页面使用</p>
+<p>​    要想在页面中使用exception 对象，需要添加&lt;%@ isErrorPage=”true”%&gt;指定该页面为异常捕获页面</p>
+<p>​    有一个页面出现异常，在页面中指定一个错误处理页面，page指令当中，errorpage来指定</p>
+<p><strong>application</strong>对象：提供关于服务器版本，应用及初始化参数和应用内资源绝对路径方式</p>
+<p>​    作用域：web容器的生命周期</p>
+<p>   应用：获取应用的访问量</p>
+<h2 id="通过URL参数的方式来传递数据"><a href="#通过URL参数的方式来传递数据" class="headerlink" title="通过URL参数的方式来传递数据"></a>通过URL参数的方式来传递数据</h2><p>​    规则：资源？key=value&amp;key=value</p>
+<h2 id="JSTL和EL表达式"><a href="#JSTL和EL表达式" class="headerlink" title="JSTL和EL表达式"></a>JSTL和EL表达式</h2><p>EL表达式语法 ：${ 变量名}  代替request获取值</p>
+<p>JSTL标准标签库：（JavaServerPages Standard Tag Library）</p>
+<p>JSTL通常会与EL表达式合作实现JSP页面的编码</p>
+<p>JSTL开发准备：</p>
+<p>​        在jsp页面添加taglib指令&lt;%@ taglib uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> prefix=”c”%&gt;</p>
+<p>JSTL常用标签：</p>
+<p>通用标签：</p>
+<p>set标签：将值保存到指定范围里</p>
+<ul>
+<li><p>将value值存储到范围为scope的变量variable中</p>
+<p>&lt;c:set  var=”username” value=“张三” scope=”request” /&gt;：往request对象存储名为 username 值为张三的数据键值对</p>
+</li>
+</ul>
+<p>out标签：将结果输出显示</p>
+<p>​        &lt;c:out value=”value” /&gt;</p>
+<p>remove标签：删除<strong>指定域内</strong>数据</p>
+<p>​        &lt;c:remove var=”username” scope=”session” /&gt;    </p>
+<p>条件标签： if 标签 ， choose 标签</p>
+<p>if标签： test：接判断的条件，如果条件为true，将执行标签体内的内容</p>
+<p> choose标签需要与when和otherwise标签一起使用</p>
+<p>迭代标签 forEach</p>
+<pre><code> &lt;c:foreach items=&quot;&quot; var=&quot;&quot;&gt; &lt;/c:foreach&gt;</code></pre><p>items :集合   var:数据类型</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>特点：</p>
+<ul>
+<li><p>通过在后台与服务器进行少量数据交换，Ajax可以使网页实现异步更新</p>
+</li>
+<li><p>不使用Ajax的传统网页如果需要更新，必须重载整个网页页面</p>
+</li>
+</ul>
+<p>使用Ajax实现局部更新</p>
+<p>​    引用jquery包</p>
+<p>例：点击登录按钮时触发ajax事件    登录按钮：<input type="button" value="登录" id="login"></p>
+<pre><code>&lt;!--dataType：指明Servlet给Ajax返回数据的数据格式
+    result:封装了Servlet返回的Ajax的结果
+--&gt;
+&lt;script type=&quot;text/javaScript&quot;&gt;
+    ${&quot;#login&quot;}.click(function(){
+        $.ajax({
+            url:&quot;&quot;,
+            type:&quot;post&quot;,
+            data:{
+                username:$(&quot;input[name=username]&quot;).val();
+                password:$(&quot;input[name=password]&quot;).val()
+            },
+            dataType:&quot;json&quot;,
+            success:function(result){
+                var flag = result.flag;
+                if(flag==true){
+                    window.location.href=&quot;成功页面&quot;;
+                }
+                else{
+                    &lt;!--跳回登录页面--&gt;
+                }
+
+        });
+    });
+&lt;/script&gt;</code></pre><p>​    url:请求时的地址</p>
+<p>​    type:请求时数据的传递方式（常用的get/post）</p>
+<p>​    data：用来传递的数据（建议使用json来传递）</p>
+<p>​    success：交互成功后要执行的方法</p>
+<p>​    dataType:ajax 接收后台数据的类型（建议使用json）</p>
+<p>​    注意事项：ajax和后台交互时，<strong>后台是不能够直接跳转到其他页面的</strong></p>
+<p>练习：通过点击不同的按钮页面显示不同的信息</p>
+<pre class=" language-jsp"><code class="language-jsp"><%--
+  Created by IntelliJ IDEA.
+  User: Fan
+  Date: 2020/4/16
+  Time: 17:30
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="js/jquery-3.2.1.js"></script>
+<html>
+  <head>
+    <title>欢迎</title>
+  <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+  <body>
+  <%
+    String basePath =request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()
+    +request.getServletContext().getContextPath()+"/";
+  %>
+  <input type="button" id="popularButton" value="流行歌曲" onclick="getText(this.value)" >
+  <input type="button" id="classicalButton" value="古典歌曲" onclick="getText(this.value)" >
+  <input type="button" id="rockButton" value="摇滚歌曲" onclick="getText(this.value)" >
+  <h2 class="1"></h2>
+  <h2 class="2"></h2>
+  <h2 class="3"></h2>
+  </body>
+<script type="text/javascript">
+
+ /* var temp =1;
+  $("#popularButton").click(function () {
+    $.ajax({
+      url:"<%=basePath%>/MusicServlet",
+      type:"post",
+      data:{
+        popularButton:$("input[name=popularButton]").val(),
+      },
+      dataType:"json",
+     success :function (result) {
+       for (var i = 0; i < result.length; i++,temp++) {
+         var json1 =  result[i];
+         for(var item in json1){
+           if(item==temp){
+             var jValue=json1[item];
+             console.log(jValue);
+           }
+         }
+       }
+     }
+    });
+  });*/
+  function getText(param1) {
+    $(".tips").text(param1);
+    var temp =1;
+    $.ajax({
+      url:"<%=basePath%>/MusicServlet",
+      type:"post",
+      data:{
+       "buttonValue":param1,
+      },
+      dataType:"json",
+      success :function (result) {
+        for (var i = 0; i < result.length; i++,temp++) {
+          var json1 =  result[i];
+          for(var item in json1){
+            if(item==temp){
+              var jValue=json1[item];
+              $("."+temp).text(jValue);
+            }
+          }
+        }
+      }
+    })
+  }
+
+</script>
+
+</html></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * @Author:Fan
+ * @Description:
+ * @Date:Create in 17:36 2020/4/16
+ * @Modify By:
+ **/</span>
+<span class="token annotation punctuation">@WebServlet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"MusicServlet"</span><span class="token punctuation">,</span>urlPatterns <span class="token operator">=</span> <span class="token string">"/MusicServlet"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MusicServlet</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token function">doGet</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        String buttonType <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"buttonValue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>buttonType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JSONArray array<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">JSONArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JSONObject jsonObject1<span class="token operator">=</span>null<span class="token punctuation">;</span>
+        JSONObject jsonObject2 <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"流行歌曲"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>buttonType<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+             jsonObject1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{1:成都}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             jsonObject2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{2:成都好}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"古典歌曲"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>buttonType<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+             jsonObject1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{1:梅花三弄}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             jsonObject2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{2:阳春白雪}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"摇滚歌曲"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>buttonType<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            jsonObject1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{1:春天里}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            jsonObject2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span><span class="token string">"{2:不再犹豫}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        array<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>jsonObject1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        array<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>jsonObject2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token operator">+</span>array<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        response<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>JavaScript版 ajax局部更新</p>
+<p>​    关键代码：</p>
+<pre><code>function x (){
+//创建一个xmlhttpRequest对象
+var xmlhttp = new XMLHttpRequest();
+//规定请求的类型，URL以及是否异步处理请求 :true表示异步处理
+xmlhttp.open(&quot;GET&quot;,url,true);
+//将请求发送到服务器
+xmlhttp.sent();
+//接收服务器端的响应（readyState=4表示请求已完成且响应已就绪 status=200表示请求响应一切正常）
+xmlhttp.onreadystatechange=function(){
+if(xmlhttp.onreadyState == 4 &amp;&amp; xmlhttp.status ==200){
+    //responseText表示服务器返回给ajax的数据
+    document.getElementById(&quot;xx&quot;).innerHTML  = xmlhttp.responseText;
+}
+}
+}</code></pre>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://shapefire.github.io" rel="external nofollow noreferrer">ShapeFire</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://shapefire.github.io/posts/2024902247.html">http://shapefire.github.io/posts/2024902247.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://shapefire.github.io" target="_blank">ShapeFire</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/JSP/">
+                                    <span class="chip bg-color">JSP</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/2807274217.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="XML">
+                        
+                        <span class="card-title">XML</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            XML概述Extensible Markup Language 可扩展标记语言
+允许开发者自由定义标签，可将标签和内容有效分离
+XML不再侧重于数据如何展示，而是更多地关注数据如何存储和传输
+应用场景XML把数据从HTML分离出来
+简化数据
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaWeb/" class="post-category">
+                                    JavaWeb
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/XML/">
+                        <span class="chip bg-color">XML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/3424359953.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
+                        
+                        <span class="card-title">JavaScript</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JavaScript学习js输出
+Window.alert ()警告窗
+Window.alert (‘helloworld’)； 内容用单引号’ ‘   window可省略
+
+document.write（）写到HTML文档中
+
+inner
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('250')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: ShapeFanBlog<br />'
+            + '文章作者: ShapeFan<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。--ShapeFan';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="http://shapefire.github.io" target="_blank">ShapeFan</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/shapefire" target="_blank">ShapeFan</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">48.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+              <span id="busuanzi_container_site_pv" style='display:none'></span>
+                  <i class="fa fa-heart-o"></i>
+                      本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+             
+
+            
+                 <span id="busuanzi_container_site_uv" style='display:none'></span>
+            人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            
+
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "2";
+                    var startDate = "2";
+                    var startHour = "16";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shapefire" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1754929015@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1754929015" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1754929015" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+        var pvcountOffset = 80000;  // 初始化首次数据
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据
+                clearInterval(int); // 停止检测
+            }
+        }
+    });
+</script>
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+<!-- 背景雪花飘落特效-->
+    
+        <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+            }
+        </script>
+    
+</body>
+
+</html>
