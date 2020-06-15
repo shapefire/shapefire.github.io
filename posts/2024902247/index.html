@@ -461,7 +461,7 @@ java Reso">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2020-06-01
                 </div>
                 
                 <!--添加作者信息-->
@@ -631,11 +631,18 @@ else {
 
         });
     });
-&lt;/script&gt;</code></pre><p>​    url:请求时的地址</p>
-<p>​    type:请求时数据的传递方式（常用的get/post）</p>
+&lt;/script&gt;</code></pre><p>Ajax 参数：</p>
+<p>​    url:请求时的地址</p>
+<p>​    type:请求时数据的传递方式（常用的get/post）   1.9.0之后用method</p>
+<p>​    headers：请求头</p>
+<p>​    contextType:即将发送信息至服务器的内容编码类型</p>
+<p>​    async：是否异步</p>
 <p>​    data：用来传递的数据（建议使用json来传递）</p>
-<p>​    success：交互成功后要执行的方法</p>
+<p>​    success：交互成功后要执行的函数（全局）</p>
 <p>​    dataType:ajax 接收后台数据的类型（建议使用json）</p>
+<p>​    beforeSend：发送请求前执行的函数（全局）</p>
+<p>​    complete: 完成之后执行的回调函数（全局）</p>
+<p>​    error：交互失败后要执行的函数（全局）</p>
 <p>​    注意事项：ajax和后台交互时，<strong>后台是不能够直接跳转到其他页面的</strong></p>
 <p>练习：通过点击不同的按钮页面显示不同的信息</p>
 <pre class=" language-jsp"><code class="language-jsp"><%--
@@ -752,21 +759,32 @@ else {
 <span class="token punctuation">}</span></code></pre>
 <p>JavaScript版 ajax局部更新</p>
 <p>​    关键代码：</p>
-<pre><code>function x (){
+<pre class=" language-JavaScript"><code class="language-JavaScript">function x (){
 //创建一个xmlhttpRequest对象
 var xmlhttp = new XMLHttpRequest();
 //规定请求的类型，URL以及是否异步处理请求 :true表示异步处理
-xmlhttp.open(&quot;GET&quot;,url,true);
+xmlhttp.open("GET",url,true);
 //将请求发送到服务器
 xmlhttp.sent();
 //接收服务器端的响应（readyState=4表示请求已完成且响应已就绪 status=200表示请求响应一切正常）
 xmlhttp.onreadystatechange=function(){
-if(xmlhttp.onreadyState == 4 &amp;&amp; xmlhttp.status ==200){
+if(xmlhttp.onreadyState == 4 && xmlhttp.status ==200){
     //responseText表示服务器返回给ajax的数据
-    document.getElementById(&quot;xx&quot;).innerHTML  = xmlhttp.responseText;
+    document.getElementById("xx").innerHTML  = xmlhttp.responseText;
 }
 }
 }</code></pre>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>Ajax的<strong>核心</strong>：XMLHttpRequest对象（XHR），XHR向服务器发送请求和解析服务器响应提供了接口，能够以异步方式从服务器上获取新数据</p>
+<ul>
+<li>纯JS原生实现 Ajax    XMLHttpRequest： <a href="https://www.w3school.com.cn/xml/xml_http.asp" target="_blank" rel="noopener">https://www.w3school.com.cn/xml/xml_http.asp</a></li>
+<li>jQuery 实现 Ajax <ol>
+<li>通过jQuery AJAX方法，可使用<strong>HTTP GET</strong> 和 <strong>HTTP POST</strong>从服务器上<strong>请求文本，HTML,XML,或Json</strong> —同时能够<strong>把</strong>这些<strong>外部数据</strong>直接<strong>载入网页的被选元素</strong>中</li>
+<li>jQuery 提供多个与AJAX有关的方法</li>
+<li>jQuery AJAX的本质：XMLHttpRequest对象（XHR），进行过封装</li>
+</ol>
+</li>
+</ul>
+
             </div>
             <hr/>
 
@@ -1157,7 +1175,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.9k</span>&nbsp;字
+                class="white-color">50.7k</span>&nbsp;字
             
             
             

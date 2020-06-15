@@ -4,14 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript, ShapeFanBlog">
-    <meta name="description" content="JavaScript学习js输出
-Window.alert ()警告窗
-Window.alert (‘helloworld’)； 内容用单引号’ ‘   window可省略
+    <meta name="keywords" content="RestFul, ShapeFanBlog">
+    <meta name="description" content="RestFul风格REST
+REST全称是Representational State Transfer，表述性状态转移
+基于HTTP、URI、XML、JSON等标准和协议
+支持轻量级、跨平台、跨语言
 
-document.write（）写到HTML文档中
 
-inner">
+轻量级：代码不被侵入，跟包大小无关">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@ inner">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JavaScript | ShapeFanBlog</title>
+    <title>RestFul | ShapeFanBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@ inner">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript</h1>
+                    <h1 class="description center-align post-title">RestFul</h1>
                 </div>
             </div>
         </div>
@@ -429,25 +429,12 @@ inner">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/js/">
-                                <span class="chip bg-color">js</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -456,14 +443,14 @@ inner">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-06
+                    2020-05-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2020-05-28
                 </div>
                 
                 <!--添加作者信息-->
@@ -475,14 +462,14 @@ inner">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -493,112 +480,248 @@ inner">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JavaScript学习"><a href="#JavaScript学习" class="headerlink" title="JavaScript学习"></a>JavaScript学习</h1><h2 id="js输出"><a href="#js输出" class="headerlink" title="js输出"></a>js输出</h2><ol>
-<li><p>Window.alert ()警告窗</p>
-<p>Window.alert (‘helloworld’)； 内容用单引号’ ‘   window可省略</p>
+                <h1 id="RestFul风格"><a href="#RestFul风格" class="headerlink" title="RestFul风格"></a>RestFul风格</h1><h2 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h2><ul>
+<li>REST全称是Representational State Transfer，表述性状态转移</li>
+<li>基于HTTP、URI、XML、JSON等标准和协议</li>
+<li>支持轻量级、跨平台、跨语言</li>
+</ul>
+<blockquote>
+<p>轻量级：代码不被侵入，跟包大小无关，耦合性越低，越轻量 。反例：Struts中每一个Action都要继承核心控制器</p>
+</blockquote>
+<h2 id="REST主要原则"><a href="#REST主要原则" class="headerlink" title="REST主要原则"></a>REST主要原则</h2><ul>
+<li>对网络上所有的资源都有一个资源标志符(URI)  </li>
+<li>对资源的操作不会改变标识符</li>
+<li>同一资源有多种表现形式（xml、json）</li>
+<li>所有操作都是无状态的（Stateless)</li>
+</ul>
+<blockquote>
+<p>URI(Universal Resource Identifier ）:统一资源标志符：在某一规则下能把一个资源独一无二地标识出来</p>
+<p>URL(Universal Resource Locator ):统一资源定位符 ：提供找到该资源的路径  </p>
+<p>URL是URI的子集</p>
+</blockquote>
+<blockquote>
+<p>无状态性：使得客户端和服务器端<strong>不必保存对方的详细信息</strong>，服务器<strong>只需要处理当前的请求</strong>，不需了解请求的历史。可以更容易的释放资源，让服务器利用Pool技术来提高稳定性和性能。</p>
+</blockquote>
+<h2 id="RESTful概述"><a href="#RESTful概述" class="headerlink" title="RESTful概述"></a>RESTful概述</h2><ul>
+<li><p>RESTful是一种常见的REST应用，是遵循REST风格的web服务，<strong>REST式的web服务是一种ROA</strong>（面向资源的架构）</p>
+<blockquote>
+<p>web服务交互方案：</p>
+<p>1.REST</p>
+<p>2.SOAP(Simple Object Access protocol):简单对象访问协议是交换数据的一种协议规范，是一种轻量的、简单的、基于XML的协议，它被设计成在WEB上交换结构化的和固化的信息</p>
+<p>3.RPC(Remote Procedure Call Protocol):远程过程调用协议，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议</p>
+</blockquote>
 </li>
-<li><p>document.write（）写到HTML文档中</p>
+<li><p>基于RestFul风格设计的软件可以更简洁，更有层次，<strong>更易于实现缓存机制</strong></p>
 </li>
-<li><p>innerHTML写到HTML元素</p>
-<p>要先获取标签  语法：document.getElementById（’标签名’).innerHTML =” xxxxx”</p>
+</ul>
+<h2 id="资源与URI"><a href="#资源与URI" class="headerlink" title="资源与URI"></a>资源与URI</h2><ul>
+<li>任何事物，只要有被引用到的必要，它就是一个资源</li>
+<li>资源可以是实体，，也可以是抽象的</li>
+<li>要让一个资源可以被识别，需要有个唯一标识，在Web中这个唯一标识就是URI(Uniform Resource Identifier)</li>
+</ul>
+<blockquote>
+<p>例如：查询user的id为xx的信息</p>
+<p>REST的url(uri): http://…/user/1  </p>
+<p>非REST的url：http://…/user?id=1</p>
+</blockquote>
+<h2 id="统一资源接口"><a href="#统一资源接口" class="headerlink" title="统一资源接口"></a>统一资源接口</h2><ul>
+<li><p>RESTful架构<strong>遵循统一接口原则</strong>，统一接口包含了一组受限的预定义的操作，不论什么样的资源，都是通过使用相同的接口进行资源的访问。</p>
 </li>
-<li><p>console.log() 写到游览器控制台</p>
-<p>​    console.log(‘xxx’)</p>
+<li><p>按照HTTP方法的语义来暴露资源，那么接口将会<strong>拥有安全性</strong>和<strong>幂等性</strong>的特性；例如GET和HEAD请求都是安全的， 无论请求多少次，都不会改变服务器状态。而GET、HEAD、PUT和DELETE请求都是<strong>幂等</strong>的</p>
 </li>
-</ol>
-<h2 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h2><p>字符串 （String） 数字（Number）布尔（Boolean） 数组（Array）对象（Object） 空（Null）</p>
-<p>未定义（Undefined）</p>
-<p>​    <strong>var 可以声明各种类型</strong>  </p>
-<p>​    JavaScript对象   键值对    var person ={name:”xxx”,id:”xxx”};</p>
-<h2 id="js变量"><a href="#js变量" class="headerlink" title="js变量"></a>js变量</h2><p>变量必须以字母开头</p>
-<p>变量也可以以$和_符号开头（不推荐）</p>
-<p>变量名称对<strong>大小写敏感</strong> （y和Y是不同的变量）</p>
-<h2 id="js函数"><a href="#js函数" class="headerlink" title="js函数"></a>js函数</h2><p>函数是由 事件驱动的 或者当它被调用时可执行的可重复使用的代码块</p>
-<p>function a( 参数){  }     声明会前置：不管函数在哪个位置游览器都会将函数前置</p>
-<p>var a = function(参数) {  }</p>
-<h2 id="js的for-in-语法"><a href="#js的for-in-语法" class="headerlink" title="js的for in 语法"></a>js的for in 语法</h2><p> 例子：  var person ={name:”zhangsan”,id:”9527”};   for(xx in person){ console.log(person[key])} </p>
-<p>​                上面 输出为：person对象中的所有key对应的值 即  zhangsan   9527  </p>
-<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展置标语言的标准编程接口。它是一种与平台和语言无关的应用程序接口(API),它可以动态地访问程序和脚本,更新其内容、结构和www文档的风格(目前,HTML和XML文档是通过说明部分定义的)。文档可以进一步被处理，处理的结果可以加入到当前的页面。<strong>DOM是一种基于树的API文档</strong>，它要求在处理过程中整个文档都表示在存储器中。另外一种简单的API是基于事件的SAX，它可以用于处理很大的XML文档，由于大，所以不适合全部放在存储器中处理。</p>
-<h3 id="js-获取html标签"><a href="#js-获取html标签" class="headerlink" title="js 获取html标签"></a>js 获取html标签</h3><ol>
-<li><p>document.getElementById</p>
-</li>
-<li><p>document.getElementsByTagName()   获取标签内的标签  结果可能是数组</p>
-<p>例如获取id为main的第一个p标签：var main = ddocument.getElementById(‘’main”); var p =main..getElementsByTagName(“p”)[0];</p>
-</li>
-<li><p>document.getElementsByClass()</p>
-</li>
-</ol>
-<h3 id="修改HTML属性"><a href="#修改HTML属性" class="headerlink" title="修改HTML属性"></a>修改HTML属性</h3><ol>
-<li>element.getAttribute()</li>
-<li>element.setAttribute() //添加或修改</li>
-<li>element.src</li>
-<li>element.href</li>
-</ol>
-<h3 id="修改CSS样式"><a href="#修改CSS样式" class="headerlink" title="修改CSS样式"></a>修改CSS样式</h3><p>​    例子：改变标签的css的颜色： document.getElementById（“xx”).style.color =“xx”</p>
-<h3 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h3><p>写法：</p>
-<ol>
-<li><h1 onclick="this.innerHTML='谢谢！'">请点击该文本 </h1>
-</li>
-<li><p>Element.onclick = function(){  displayDate()};</p>
-</li>
-<li><p>Element.addEventListener(“click”,function(){     })</p>
-</li>
-</ol>
-<h3 id="DOM节点"><a href="#DOM节点" class="headerlink" title="DOM节点"></a>DOM节点</h3><p>添加和删除节点</p>
-<ol>
-<li>document.createElement(“p”)</li>
-<li>document.createTextNode(“新增”) //1和2 一般结合3或4 一起使用</li>
-<li>parent.appendChild(child);       </li>
-<li>parent.removeChild(child);</li>
-</ol>
-<h2 id="JS–Window"><a href="#JS–Window" class="headerlink" title="JS–Window"></a>JS–Window</h2><p>所有的游览器都支持window对象</p>
-<p>所有JavaScript全局对象，函数以及变量均自动成为window对象的成员</p>
-<p>全局变量是window对象的属性</p>
-<p>全局函数是window对象的方法</p>
-<p>window.open()</p>
-<p>window.close()</p>
-<p>window.moveTo() -移动当前窗口</p>
-<p>window.resizeTo()- 调整当前窗口尺寸</p>
-<p>screen.availwidth  屏幕的可用宽度</p>
-<p>screen.availHeight 屏幕的可用高度</p>
-<p>location.hostname 返回web主机的域名‘</p>
-<p>location.pathname 返回当前页面的路径和文件名</p>
-<p>location.protocol 返回所使用的web协议</p>
-<p>location.href 返回当前页面的整个URL</p>
-<p>history.back  后退</p>
-<p>history.forward  向前</p>
-<p>history.go</p>
-<h2 id="JS实现图片轮播特效"><a href="#JS实现图片轮播特效" class="headerlink" title="JS实现图片轮播特效"></a>JS实现图片轮播特效</h2><ol>
-<li><p>如果让超链接a标签不作超链接跳转：<a href="javascript:void(0)"></a>  </p>
-</li>
-<li><p>让几张图片图片重叠在一起 ，使用定位  父相子绝（父级：相对定位，子：绝对定位）</p>
-</li>
-<li><p>使用 display：none  隐藏图片，让特定当前的图片显示 display：block</p>
-</li>
-<li><p>对于同一个产品等级的标签  它的class 应写多个名字来用于写CSS样式  ，将相同的样式和不同的样式分开，减少代码</p>
-<p>例如：上一张和下一张的按钮 ，上一张的命名为 class=“button  pre”,上一张的命名为 class=“button next ”  </p>
-</li>
-<li><p>旋转   transfrom ：rotate（180deg）   透明度：opacity ：0.8  为兼容游览器一般添加 fillter:alpha(opacity=80)</p>
-</li>
-<li><p>水平排列： display:inline-block;</p>
-</li>
-<li><p>让一些形状（例如圆形）有外圈亮的描边： 先设置该形状的背景颜色，再使用阴影颜色</p>
-<p>​     backgroud:rgba(7,1,27，0.8)    box-shadow:0  0  0  2px rgba(255,255,255,0.8)   inset；</p>
-<p>​    rgba的a指透明度          box-shadow:阴影</p>
-</li>
-<li><p>当鼠标停留在轮播的图片时，停止轮播  </p>
-</li>
-<li><p>js判断参数类型   typeof（参数） === “string”? document.getElementById(id) :id</p>
-<p>封装getElementById(id):</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">byId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span>    <span class="token keyword">typeof</span>（id） <span class="token operator">===</span> “string”<span class="token operator">?</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">:</span>id<span class="token punctuation">;</span>
+</ul>
+<blockquote>
+<p>安全性：对该REST接口访问，不会使服务器端资源的状态发生改变。</p>
+</blockquote>
+<blockquote>
+<p>幂等性: 无论对资源操作多少次， 结果总是一样的，后面的请求并不会产生比第一次更多的影响,得到的资源状态是一样的</p>
+</blockquote>
+<h2 id="资源操作"><a href="#资源操作" class="headerlink" title="资源操作"></a>资源操作</h2><table>
+<thead>
+<tr>
+<th>http 方法</th>
+<th>资源操作</th>
+<th>安全性</th>
+<th>幂等性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET</td>
+<td>SELECT</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>INSERT</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>UPDATE</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>DELETE</td>
+<td>否</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<p>传统方式操作资源  ：通过不同参数来实现不同的效果  方法单一：GET,POST</p>
+<p>传统URL请求格式：</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://127.0.0.1/user/query?id" target="_blank" rel="noopener">http://127.0.0.1/user/query?id</a> =1</td>
+<td>查询，GET</td>
+</tr>
+<tr>
+<td><a href="http://127.0.0.1/user/save" target="_blank" rel="noopener">http://127.0.0.1/user/save</a></td>
+<td>添加，POST</td>
+</tr>
+<tr>
+<td><a href="http://127.0.0.1/user/update" target="_blank" rel="noopener">http://127.0.0.1/user/update</a></td>
+<td>更新，POST</td>
+</tr>
+<tr>
+<td><a href="http://127.0.0.1/user/delete?id" target="_blank" rel="noopener">http://127.0.0.1/user/delete?id</a> =1</td>
+<td>删除，POST</td>
+</tr>
+</tbody></table>
+<p>RESTful操作资源：通过不同的请求方式来实现不同的效果： 例如请求URL相同，但是实现的功能不同</p>
+<p>RESTful请求格式</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://127.0.0.1/user/1" target="_blank" rel="noopener">http://127.0.0.1/user/1</a></td>
+<td>查询，GET</td>
+</tr>
+<tr>
+<td><a href="http://127.0.0.1/user" target="_blank" rel="noopener">http://127.0.0.1/user</a></td>
+<td>添加，POST</td>
+</tr>
+<tr>
+<td><a href="http://127.0.0.1/user" target="_blank" rel="noopener">http://127.0.0.1/user</a></td>
+<td>更新，PUT</td>
+</tr>
+<tr>
+<td><a href="http://127.0.0.1/user/1" target="_blank" rel="noopener">http://127.0.0.1/user/1</a></td>
+<td>删除，DELETE</td>
+</tr>
+</tbody></table>
+<p>使用测试：</p>
+<p>测试环境：SpringMVC</p>
+<ul>
+<li>Controller类</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RestFulController</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 传统操作资源方式：
+     * 访问 url:http://localhost:8080/add?a=1&amp;b=10
+     * @param a
+     * @param b
+     * @param model
+     * @return test.jsp
+     */</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/add"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">traditionalOperating</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> result <span class="token operator">=</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"结果为"</span><span class="token operator">+</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 使用RestFul风格操作资源方式 默认：GET
+     * 访问uri：http://localhost:8080/add/1/10
+     * 方法参数前需要添加 @PathVariable注解 让方法参数的值对应绑定到一个URI模板变量上
+     * @param a
+     * @param b
+     * @param model
+     * @return test.jsp
+     */</span>
+    <span class="token comment" spellcheck="true">/**
+     *  @GetMapping("add/{a}/{b}")
+     */</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"add/{a}/{b}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">restFulOperatingTest1</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span>Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> result <span class="token operator">=</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+        model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"结果为"</span><span class="token operator">+</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 使用RestFul风格操作资源方式 通过指定的请求方式实现
+     * 在 @RequestMapping 注解中 添加 method属性：
+     * 属性值有： GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS,TRACE;
+     * 例如指定请求方式为Delete：method = RequestMethod.DELETE
+     * @param id
+     * @param model
+     * @return test.jsp
+     */</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/delete/{id}"</span><span class="token punctuation">,</span>method <span class="token operator">=</span> RequestMethod<span class="token punctuation">.</span>DELETE<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">/**
+    *上面注解可用@DeleteMapping("/delete/{id}"),其他属性值类似：GET请求则为@GetMapping
+    */</span>
+    <span class="token keyword">public</span> String <span class="token function">restFulOperatingTest2</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token keyword">int</span> id<span class="token punctuation">,</span>Model model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">/**
+         * 执行删除用户id业务层操作
+         */</span>
+        <span class="token keyword">return</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-</li>
-<li><p>编写鼠标划过图片事件：业务逻辑为滑过清除定时器  方法：if(timer) clearInterval(timer);</p>
-</li>
-<li><p>编写自动播放图片事件：业务逻辑为切换图片   方法：设置var timer = serInterval(function(){},3000)</p>
-</li>
-<li><p>setInterval(function(){},3000)   :3秒执行一次该方法</p>
+<h2 id="SpringMVC-发送PUT，Delete请求问题"><a href="#SpringMVC-发送PUT，Delete请求问题" class="headerlink" title="SpringMVC 发送PUT，Delete请求问题"></a>SpringMVC 发送PUT，Delete请求问题</h2><ol>
+<li><p>在浏览器端的 Form 表单中只支持 GET、POST 请求，不支持 PUT、DELETE 请求</p>
+<p>解决：</p>
+<ul>
+<li><p>web.xml下增加名称为hiddenHttpMethodFilter的过滤器</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>hiddenHttpMethodFilter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-class</span><span class="token punctuation">></span></span>org.springframework.web.filter.HiddenHttpMethodFilter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-class</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-mapping</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>hiddenHttpMethodFilter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-mapping</span><span class="token punctuation">></span></span></code></pre>
+<p> HiddenHttpMethodFilter 过滤器的原理是获取一个 name 为 _method 的属性，获取其值，根据其值决定转化为 PUT 还是 DELETE 请求，所以需要在表单中设置一个 name 值为 _method 的隐藏域元素。</p>
+<p>PUT请求方式  若该请求已在form表单method=“post”中不需要借助JavaScrippt</p>
+<pre class=" language-jsp"><code class="language-jsp"><form action="${pageContext.request.contextPath}/book/updateBook" method="post">
+                <input type="hidden" name="_method" value="PUT"/>
+                <!--可其他元素添加-->
+                <div style="text-align:center">
+                    <button type="submit" class="btn btn-default">更新</button>
+                </div>
+       </form></code></pre>
+<p> Delete  请求 ，没有在from表单中，需要添加隐藏域的form表单并借助js</p>
+<pre><code>&lt;form action=&quot;/book/&quot; method=&quot;post&quot; id=&quot;del_From&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;_method&quot; value=&quot;DELETE&quot;&gt;
+&lt;/form&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(function () {
+        //为超链接为class=‘del’点击动作添加行为函数
+        $(&quot;.del&quot;).click(function () {
+            //获取class为delete的超链接的地址
+          // var href = $(this).attr(&quot;href&quot;);
+            //为隐藏域的action赋值并提交
+            $(&quot;#del_From&quot;).attr(&quot;action&quot;, this.href).submit();
+            return false;//该语句不可缺少 将超链接的默认行为取消
+        })
+    })
+&lt;/script&gt;</code></pre></li>
+</ul>
 </li>
 </ol>
 
@@ -626,7 +749,7 @@ inner">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://shapefire.github.io/posts/3424359953/">http://shapefire.github.io/posts/3424359953/</a>
+                    <a href="http://shapefire.github.io/posts/1231766895/">http://shapefire.github.io/posts/1231766895/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -663,11 +786,7 @@ inner">
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/js/">
-                                    <span class="chip bg-color">js</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -706,53 +825,45 @@ inner">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/2024902247/">
+                <a href="/posts/1231766895/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="JSP">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="RestFul">
                         
-                        <span class="card-title">JSP</span>
+                        <span class="card-title">RestFul</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JSP（Java Server Page）根本：简化的Servlet设计
-JSP是在传统的网页HTML文件中插入Java程序段（Scriptlet)和JSP标记（tag) 
-JSP开发的web应用是跨平台
-动态项目的结构
-java Reso
+                            RestFul风格REST
+REST全称是Representational State Transfer，表述性状态转移
+基于HTTP、URI、XML、JSON等标准和协议
+支持轻量级、跨平台、跨语言
+
+
+轻量级：代码不被侵入，跟包大小无关
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaWeb/" class="post-category">
-                                    JavaWeb
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            ShapeFire
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JSP/">
-                        <span class="chip bg-color">JSP</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -763,35 +874,35 @@ java Reso
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3268049553/">
+                <a href="/posts/2009398734/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java线程">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Java反射与注解">
                         
-                        <span class="card-title">Java线程</span>
+                        <span class="card-title">Java反射与注解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java多线程进程：可执行的程序并存放在计算机存储器的一个指令序列，是动态执行的过程
-线程：线程是比进程还要小的运行单位，一个进程包含多个线程
-​        线程之间是交互运行的状态
-线程的创建
-创建一个Thread 类，或者一个Thr
+                            注解与反射注解(Annotation)概念
+不是程序本身，可对程序作出解释
+可以被其他程序（比如编译器）读取
+以“@注释名”在代码中存在的，还可以添加一些参数值
+附加在package，class，method，field等上面，相当给他们添
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaWeb/" class="post-category">
-                                    JavaWeb
+                            <a href="/categories/java/" class="post-category">
+                                    java
                                 </a>
                             
                             
@@ -801,8 +912,8 @@ java Reso
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B9%B6%E5%8F%91/">
-                        <span class="chip bg-color">并发</span>
+                    <a href="/tags/%E6%B3%A8%E8%A7%A3%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">
+                        <span class="chip bg-color">注解反射机制</span>
                     </a>
                     
                 </div>

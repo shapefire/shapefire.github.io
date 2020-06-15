@@ -467,7 +467,7 @@ GoF设计模式有23个 + 简单工厂模式
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-18
+                    2020-06-15
                 </div>
                 
                 <!--添加作者信息-->
@@ -566,11 +566,11 @@ GoF设计模式有23个 + 简单工厂模式
 <li><img src="https://shapefire.github.io/posts/911124684/simpleFactoryConstructionImg.PNG" alt="simpleFactoryConstruction"></li>
 </ul>
 </li>
-<li><p>Factory（工厂角色）：工厂角色即工厂类，它是简单工厂模式的核心，负责实现创建所有产 品实例的内部逻辑；工厂类可以被外界直接调用，创建所需的产品对象；在工厂类中提供了<br>静态的工厂方法factoryMethod()，它的返回类型为抽象产品类型Product。</p>
-<ul>
-<li>Product（抽象产品角色）：它是工厂类所创建的所有对象的父类，封装了各种产品对象的 公有方法，它的引入将提高系统的灵活性，使得在工厂类中只需定义一个通用的工厂方法， 因为所有创建的具体产品对象都是其子类对象。</li>
-<li>ConcreteProduct（具体产品角色）：它是简单工厂模式的创建目标，所有被创建的对象都充 当这个角色的某个具体类的实例。每一个具体产品角色都继承了抽象产品角色，需要实现在 抽象产品中声明的抽象方法。</li>
-</ul>
+<li><p>Factory（工厂角色）：工厂角色即工厂类，它是简单工厂模式的核心，负责实现创建所有产 品实例的内部逻辑；工厂类可以被外界直接调用，创建所需的产品对象；在工厂类中提供了静态的工厂方法factoryMethod()，它的返回类型为抽象产品类型Product。</p>
+</li>
+<li><p>Product（抽象产品角色）：它是工厂类所创建的所有对象的父类，封装了各种产品对象的 公有方法，它的引入将提高系统的灵活性，使得在工厂类中只需定义一个通用的工厂方法， 因为所有创建的具体产品对象都是其子类对象。</p>
+</li>
+<li><p>ConcreteProduct（具体产品角色）：它是简单工厂模式的创建目标，所有被创建的对象都充 当这个角色的某个具体类的实例。每一个具体产品角色都继承了抽象产品角色，需要实现在 抽象产品中声明的抽象方法。</p>
 </li>
 <li><p>关键代码</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">abstract</span> <span class="token keyword">class</span>    <span class="token class-name">Product</span>    <span class="token punctuation">{</span>    
@@ -608,7 +608,7 @@ GoF设计模式有23个 + 简单工厂模式
         <span class="token punctuation">}</span>    
   <span class="token punctuation">}</span></code></pre>
 </li>
-<li><p>简化简化简单工厂模式：将<strong>抽象产品类和工厂类合并</strong>，将静态工厂方法移至抽象产品类中</p>
+<li><p>简化简单工厂模式：将<strong>抽象产品类和工厂类合并</strong>，将静态工厂方法移至抽象产品类中</p>
 </li>
 </ul>
 <ul>
@@ -796,13 +796,15 @@ public class UnSupportedShapeException extends Exception {
 <li><p>结构图</p>
 <ul>
 <li><img src="https://shapefire.github.io/posts/911124684/FactoryModelConstructionImg.PNG" alt="FactoryModelConstruction"></li>
-<li>Product（抽象产品）：它是定义产品的接口，是工厂方法模式所创建对象的超类型，也就是产品对象的公共父类。</li>
 </ul>
 </li>
+<li><p>Product（抽象产品）：它是定义产品的接口，是工厂方法模式所创建对象的超类型，也就是产品对象的公共父类。</p>
+</li>
+<li><p>Factory（抽象工厂）：在抽象工厂类中，声明了工厂方法(Factory    Method)，用于返回一个 产品。抽象工厂是工厂方法模式的核心，所有创建对象的工厂类都必须实现该接口</p>
+</li>
 <li><p>ConcreteProduct（具体产品）：它实现了抽象产品接口，某种类型的具体产品由专门的具体 工厂创建，具体工厂和具体产品之间一一对应。</p>
-<ul>
-<li>ConcreteFactory（具体工厂）：它是抽象工厂类的子类，实现了抽象工厂中定义的工厂方 法，并可由客户端调用，返回一个具体产品类的实例</li>
-</ul>
+</li>
+<li><p>ConcreteFactory（具体工厂）：它是抽象工厂类的子类，实现了抽象工厂中定义的工厂方 法，并可由客户端调用，返回一个具体产品类的实例</p>
 </li>
 <li><p>关键代码</p>
 <ul>
@@ -1293,22 +1295,34 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 </li>
 <li><p>关键代码：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span>    <span class="token class-name">LazySingleton</span>    <span class="token punctuation">{</span>                                <span class="token keyword">private</span>    <span class="token keyword">static</span>    LazySingleton    instance    <span class="token operator">=</span>    null<span class="token punctuation">;</span>    
-    <span class="token keyword">private</span>    <span class="token function">LazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>    <span class="token punctuation">}</span>            
-    <span class="token keyword">synchronized</span>    <span class="token keyword">public</span>    <span class="token keyword">static</span>    LazySingleton    <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>                                                    <span class="token keyword">if</span>    <span class="token punctuation">(</span>instance    <span class="token operator">==</span>    null<span class="token punctuation">)</span>    <span class="token punctuation">{</span>                                    instance    <span class="token operator">=</span>    <span class="token keyword">new</span>    <span class="token class-name">LazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token punctuation">}</span>                                                               <span class="token keyword">return</span>    instance<span class="token punctuation">;</span>                            
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span>    <span class="token class-name">LazySingleton</span>    <span class="token punctuation">{</span>    
+    <span class="token keyword">private</span>    <span class="token keyword">static</span>    LazySingleton    instance    <span class="token operator">=</span>    null<span class="token punctuation">;</span>    
+    <span class="token keyword">private</span>    <span class="token function">LazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>    <span class="token punctuation">}</span>
+
+    <span class="token keyword">synchronized</span>    <span class="token keyword">public</span>    <span class="token keyword">static</span>    LazySingleton    <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span>    <span class="token punctuation">(</span>instance    <span class="token operator">==</span>    null<span class="token punctuation">)</span>    <span class="token punctuation">{</span>
+          instance    <span class="token operator">=</span>    <span class="token keyword">new</span>    <span class="token class-name">LazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>                                                               
+      <span class="token keyword">return</span>    instance<span class="token punctuation">;</span>                            
      <span class="token punctuation">}</span>
- <span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>上述代码运行时，每次调用getInstance()时 都需要进行<strong>线程锁定判断</strong>，在多线程高并发访问环境中，将会导致<strong>系统性能大大降低</strong>。</p>
 <p>改进：将synchornate关键字作用于 instance    =    new    LazySingleton()字句中也会出现产生多个单例对象，所以需要利用双重检查锁定的方式实现</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">class</span>    <span class="token class-name">LazySingleton</span>    <span class="token punctuation">{</span>                            
-    <span class="token keyword">private</span>    <span class="token keyword">volatile</span>    <span class="token keyword">static</span>    LazySingleton    instance    <span class="token operator">=</span>    null<span class="token punctuation">;</span>            
-    <span class="token keyword">private</span>    <span class="token function">LazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>    <span class="token punctuation">}</span>            
-    <span class="token keyword">public</span>    <span class="token keyword">static</span>    LazySingleton    <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>              <span class="token comment" spellcheck="true">//第一重判断    </span>
-        <span class="token keyword">if</span>    <span class="token punctuation">(</span>instance    <span class="token operator">==</span>    null<span class="token punctuation">)</span>    <span class="token punctuation">{</span>                                <span class="token comment" spellcheck="true">//锁定代码块    </span>
-            <span class="token keyword">synchronized</span>    <span class="token punctuation">(</span>LazySingleton<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>                <span class="token comment" spellcheck="true">//第二重判断        </span>
-                <span class="token keyword">if</span>    <span class="token punctuation">(</span>instance    <span class="token operator">==</span>    null<span class="token punctuation">)</span>    <span class="token punctuation">{</span>                                    instance    <span class="token operator">=</span>    <span class="token keyword">new</span>    <span class="token class-name">LazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//创建单例实例</span>
-                <span class="token punctuation">}</span>                                                        <span class="token punctuation">}</span>                                    
-        <span class="token punctuation">}</span>                                    
+    <span class="token keyword">private</span>    <span class="token keyword">volatile</span>    <span class="token keyword">static</span>    LazySingleton    instance    <span class="token operator">=</span>    null<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span>    <span class="token function">LazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>    <span class="token punctuation">}</span>        
+    <span class="token keyword">public</span>    <span class="token keyword">static</span>    LazySingleton    <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//第一重判断    </span>
+        <span class="token keyword">if</span>    <span class="token punctuation">(</span>instance    <span class="token operator">==</span>    null<span class="token punctuation">)</span>    <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//锁定代码块    </span>
+          <span class="token keyword">synchronized</span>    <span class="token punctuation">(</span>LazySingleton<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//第二重判断        </span>
+              <span class="token keyword">if</span>    <span class="token punctuation">(</span>instance    <span class="token operator">==</span>    null<span class="token punctuation">)</span>    <span class="token punctuation">{</span>
+                    instance    <span class="token operator">=</span>    <span class="token keyword">new</span>    <span class="token class-name">LazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//创建单例实例</span>
+              <span class="token punctuation">}</span>            
+            <span class="token punctuation">}</span>                                    
+      <span class="token punctuation">}</span>                                    
         <span class="token keyword">return</span>    instance<span class="token punctuation">;</span>                            
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -1335,11 +1349,17 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//在单例类中增加一个静态(static)内部类，在该内部类中创建单例对象，再将 该单例对象通过getInstance()方法返回给外部使用，</span>
 <span class="token keyword">class</span>    <span class="token class-name">Singleton</span>    <span class="token punctuation">{</span>    
     <span class="token keyword">private</span>    <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>  <span class="token punctuation">}</span>        
-    <span class="token keyword">private</span>    <span class="token keyword">static</span>    <span class="token keyword">class</span>    <span class="token class-name">HolderClass</span>    <span class="token punctuation">{</span>                                <span class="token keyword">private</span>    <span class="token keyword">final</span>    <span class="token keyword">static</span>    Singleton    instance    <span class="token operator">=</span>    <span class="token keyword">new</span>        <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            
+    <span class="token keyword">private</span>    <span class="token keyword">static</span>    <span class="token keyword">class</span>    <span class="token class-name">HolderClass</span>    <span class="token punctuation">{</span>
+        <span class="token keyword">private</span>    <span class="token keyword">final</span>    <span class="token keyword">static</span>    Singleton    instance    <span class="token operator">=</span>    <span class="token keyword">new</span>        <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            
+   <span class="token punctuation">}</span>        
+    <span class="token keyword">public</span>    <span class="token keyword">static</span>    Singleton    <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>    
+        <span class="token keyword">return</span>    HolderClass<span class="token punctuation">.</span>instance<span class="token punctuation">;</span>                    
     <span class="token punctuation">}</span>        
-    <span class="token keyword">public</span>    <span class="token keyword">static</span>    Singleton    <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>                        <span class="token keyword">return</span>    HolderClass<span class="token punctuation">.</span>instance<span class="token punctuation">;</span>                    
-    <span class="token punctuation">}</span>        
-    <span class="token keyword">public</span>    <span class="token keyword">static</span>    <span class="token keyword">void</span>    <span class="token function">main</span><span class="token punctuation">(</span>String    args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>                        Singleton    s1<span class="token punctuation">,</span>    s2<span class="token punctuation">;</span>                                                s1    <span class="token operator">=</span>    Singleton<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                s2    <span class="token operator">=</span>    Singleton<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token operator">==</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>                
+    <span class="token keyword">public</span>    <span class="token keyword">static</span>    <span class="token keyword">void</span>    <span class="token function">main</span><span class="token punctuation">(</span>String    args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>
+        Singleton    s1<span class="token punctuation">,</span>    s2<span class="token punctuation">;</span>                                
+        s1    <span class="token operator">=</span>    Singleton<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        
+        s2    <span class="token operator">=</span>    Singleton<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token operator">==</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>        
  <span class="token punctuation">}</span>    
 <span class="token punctuation">}</span>
 </code></pre>
@@ -3342,7 +3362,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.9k</span>&nbsp;字
+                class="white-color">50.7k</span>&nbsp;字
             
             
             
