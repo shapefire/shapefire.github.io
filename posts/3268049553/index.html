@@ -461,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2020-08-04
                 </div>
                 
                 <!--添加作者信息-->
@@ -534,19 +534,20 @@ Thread<span class="token operator">-</span><span class="token number">0</span> �
 <ul>
 <li>实现Runnable接口的原因：Java不支持多继承；不打算重写Thread的方法</li>
 </ul>
-<pre><code>class PrintRunnable implements Runnable{
-    @Override
-    public void run(){
-            System.out.println(Thread.currentThread().getName +&quot;正在运行&quot;));
-    }
-}
-public class ThreadTest(){
-    public static void main(String[] args){
-        PrintRunnable pr = new PrintRunnable();
-        Thread t1 = new Thread(pr);
-        t1.start();
-    }
-}</code></pre></li>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">PrintRunnable</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getName <span class="token operator">+</span><span class="token string">"正在运行"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        PrintRunnable pr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PrintRunnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Thread t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>pr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
 </ul>
 <h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><ul>
 <li>新建（new）</li>
@@ -590,92 +591,93 @@ public class ThreadTest(){
 <p>​    synchronized关键字可以用在 <strong>成员方法</strong>；<strong>静态方法</strong>；<strong>语句块</strong></p>
 <h2 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h2><p>问题：银行系统中账户余额不够 怎么处理？</p>
 <p>解决：  生产者（Producer类进行数据的生产）  ——–》 Queue类 n( x)  ———》 消费者（Comsumer类进行数据的存取）   遵守： 生产一个数据，存读取（消费）一个数据</p>
-<pre><code>public class Queue{
-    private int n;
-    Boolean flag = flase;//保证生产一个消费一个而产生的标记变量 true代表
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Queue</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+    Boolean flag <span class="token operator">=</span> flase<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//保证生产一个消费一个而产生的标记变量 true代表</span>
 
-    public synchronized int getN(){
-        if(！flag){
-            try{
-                wait();
-            }catch( InterruptedExcrption e){
-                e.printStackTrace();
-            }
-        }
-        System.out.println(&quot;消费：&quot;+ n) ;
-        flag  = false;//消费完毕，容器内没有数据
-        notifyAll();
-        return n;
-    }
-    public synchronized void setN(int n){
-        if(flag){
-            try{
-                wait();
-            }catch( InterruptedExcrption e){
-                e.printStackTrace();
-            }
-        }
-        System.out.println(&quot;生产：&quot;+ n) ;
-        this.n = n;
-        flag = true ;//生产完毕，容器内有数据
-        notifyAll();
-    }
-}
-
-
-public class Producer implements Runnable{
-    Queue queue;
-    Producer(Queue queue){
-        this.queue = queue;
-    }
-    @override
-    public void run(){
-        int i =0;
-        while(true){
-            queue.set(i++);
-            try{
-                Thread.sleep(1000);
-            }catch( InterruptedExcrption e){
-                e.printStackTrace();
-            }
-        }
-    }
-}
-
-public class Consumer implements Runnable(){
-    Queue queue;
-    Producer(Queue queue){
-        this.queue = queue;
-    }
-    @override
-    public void run(){
-        while(true){
-            queue.get(i);
-            try{
-                Thread.sleep(1000);
-            }catch( InterruptedExcrption e){
-                e.printStackTrace();
-            }
-        }
-    }
-}
-
-public class Test{
-    public statiic void main(String[] args){
-        Queue queue=new Queue();
-        new Thread(new Producer(queue)).start();
-        new Thread(new Producer(Consumer).start();
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">int</span> <span class="token function">getN</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>！flag<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">try</span><span class="token punctuation">{</span>
+                <span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span> InterruptedExcrption e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"消费："</span><span class="token operator">+</span> n<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+        flag  <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//消费完毕，容器内没有数据</span>
+        <span class="token function">notifyAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">setN</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">try</span><span class="token punctuation">{</span>
+                <span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span> InterruptedExcrption e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"生产："</span><span class="token operator">+</span> n<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>n <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        flag <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//生产完毕，容器内有数据</span>
+        <span class="token function">notifyAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 
-//输出结果
-生产：1
-消费：1
-生产：2
-消费：2
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Producer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+    Queue queue<span class="token punctuation">;</span>
+    <span class="token function">Producer</span><span class="token punctuation">(</span>Queue queue<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>queue <span class="token operator">=</span> queue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            queue<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span><span class="token punctuation">{</span>
+                Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span> InterruptedExcrption e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Consumer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Queue queue<span class="token punctuation">;</span>
+    <span class="token function">Producer</span><span class="token punctuation">(</span>Queue queue<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>queue <span class="token operator">=</span> queue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            queue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span><span class="token punctuation">{</span>
+                Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span> InterruptedExcrption e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> statiic <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Queue queue<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Producer</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Producer</span><span class="token punctuation">(</span>Consumer<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment" spellcheck="true">//输出结果</span>
+生产：<span class="token number">1</span>
+消费：<span class="token number">1</span>
+生产：<span class="token number">2</span>
+消费：<span class="token number">2</span>
 。。。
-。。。</code></pre><p>​                                                                                                                                                          </p>
+。。。</code></pre>
+<p>​                                                                                                                                                          </p>
 
             </div>
             <hr/>
@@ -852,8 +854,9 @@ inner
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SpringIOC(inversion of control):  对象有Spring容器创建，对象属性是Spring容器来设置
-控制的内容：指谁来控制对象的创建；传统的应用程序是由程序本身控制，使用Spring后，由Spring来创建对象
+                            Spring书籍——《Spring实战 第四版》
+IOC(inversion of control):  对象有Spring容器创建，对象属性是Spring容器来设置
+控制的内容：指谁来控制对象的创建；传统的应用程序是由程序本身控制，使用S
                         
                     </div>
                     <div class="publish-info">
@@ -1064,7 +1067,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">74.3k</span>&nbsp;字
             
             
             

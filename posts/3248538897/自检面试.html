@@ -1,0 +1,97 @@
+<hr>
+<h2 id="abbrlink-3868841140"><a href="#abbrlink-3868841140" class="headerlink" title="abbrlink: 3868841140"></a>abbrlink: 3868841140</h2><p>有了字节流为什么还要字符流？</p>
+<p>因为java虚拟机的字节流是由字符流转换而成，在此过程中比较耗费时间且在如果我们不知道编码类型的情况下容易出错（乱码问题），为了简便，java提供了字符流操作，在操作字符的情况下便可以直接使用字符流。</p>
+<p>List:有序的，可重复的</p>
+<p>Set：无序的，不可重复</p>
+<p>Map：键值对存储，key 不可重复</p>
+<p>ArrayList和LinkedList集合的对比区别：</p>
+<ol>
+<li>是否线程安全   —》若一个安全另一个不安全可推出 不安全的 集合效率比安全集合的效率高</li>
+<li>底层使用的数据结构分别是什么</li>
+<li>内存空间占用</li>
+<li>插入和删除是否受到位置的影响</li>
+<li>是否支持快速访问</li>
+</ol>
+<p>集合的扩容机制：</p>
+<p>ArrayList的扩容机制：</p>
+<p>​    当ArrayList数组使用缺省的构造函数时，往数组添加第一个元素时，在ensureCapacityInternal类中判断minCapacity 和 默认容量值10 做最大值的比较，此时minCapacity 为10，然后调用ensureExplicitCapacity方法中 ，在此方法中判断（minCapacity - arrayList.length)  是否大于0 ，若大于 0 则调用 grow (minCapacity)进行扩容。</p>
+<p>​    grow(minCapacity)方法是ArrayList扩容的核心，该方法有oldCapacity 和newCapacity 变量，oldCapacity的值为数组的大小，而newCapacity= oldCapacity + oldCapacity&gt;&gt;1,相当于newCaPacity 的值为 oldCapacity的1.5 倍左右，检查新容量是否大于 最小需要的容量，若新容量小于 最小需要的容量，则 newCapacity =  minCapacity。还需要检查 newCapacity 是否大于  最大容量 ，若newCapacity超过 最大容量 Integer.MAX_VALUE，则 newCapacity = Integer.MAX_VALUE -8；最后调用了 Arrays类的copyOf的方法（主要为原有的数组扩大容量）。</p>
+<p>HashTable:</p>
+<ol>
+<li>创建时不指定容量值，默认值为11，每次扩充，容量会变成原来的2n+1 ； 指定容量值，直接使用指定的容量值；</li>
+<li>在HashTable中put 进去 的键值 <strong>只要有1个 null 值 直接抛出 NullPointerException错误</strong></li>
+<li>是线程安全的，HashTable的内部方法基本经过 Synchronized 修饰。效率 比不安全的 集合低</li>
+<li><strong>基本淘汰，不要在代码使用</strong></li>
+</ol>
+<p>HashSet:</p>
+<ol>
+<li><p>Set接口的典型实现，大多数使用Set集合时都使用HashSet实现类</p>
+</li>
+<li><p>按<strong>Hash算法</strong>存储集合中的元素，具有<strong>很好的存取和查找性能</strong></p>
+</li>
+<li><p>HashSet  <strong>不能保证元素的排列顺序</strong>    由于根据hashCode决定存放位置</p>
+</li>
+<li><p><strong>不是线程安全的</strong></p>
+</li>
+<li><p>集合元素<strong>可以使用null</strong></p>
+</li>
+<li><p>加入时如何检查重复的：先通过计算加入对象的hashCode值确定加入的位置，然后判断加入的对象的hashCode值与 原有的对象的HashCode是否相等，若不相等，则可以添加，若相等时，会调用equals（）方法判断 hashCode 值相等的对象是否真的相同，若相同则不会添加成功。 </p>
+</li>
+</ol>
+<p>HashMap：</p>
+<ol>
+<li><p>线程是不安全的</p>
+</li>
+<li><p>hashMap是通过 entry 键值对进行存储的，对于Null Key的支持是 只能存在一个 null 值的额键，而Null Value的支持是可存在多个的</p>
+</li>
+<li><p>hashMap 创建时<strong>未指定容量初始值</strong>的情况下，默认大小为 16，每次扩充容量变为原来的 2 倍； 若<strong>指定初始容量值</strong>的 情况下，那么 Hashtable 会直接使⽤给定的大小，HashMap 会将其扩充为2的幂次方的大小，<strong>HashMap 总是使用2 的 幂作为哈希表的大小</strong>（通过tableSizeFor方法实现），例如 给定值为 9，则hashMap的 大小会是16 ，因为比9大的2 的幂次方为16。</p>
+</li>
+<li><p>底层数据结构：<strong>在jdk1.8 之前</strong> ，底层 采用的是 数组+ 链表 结合一起使用； jdk1.8 后，当链表长度大于 阈值（默认为8 ）,将链表转化为红黑树，以减少搜索时间。</p>
+<p><strong>底层实现:</strong></p>
+</li>
+<li><p>jdk1.8 之前 是数组+链表 结合在一起使用 ，也称为 链表散列。</p>
+</li>
+</ol>
+<p>确定存放位置下标原理：HashMap 通过key 的hashCode  <strong>经过扰动函数</strong>（HashMap中的 hash（）方法）处理得到 hash 值，然后<strong>通过（n-1）&amp;  hash 判断当前元素存放的位置</strong>，如果当前存在元素时，判断该元素与 存入的元素的 hash值 以及 key值 是否相同，若相同，则直接覆盖，不相同则通过<strong>拉链法(链地址法)</strong>解决冲突。</p>
+<pre><code class="mermaid">graph LR
+A(key)--hashCode方法--&gt;B(hashcode)
+B--hash方法--&gt;C(hash值)
+C--indexFor方法:n-1 &amp; hash jdk1.8没有该方法但是实现原理一样  --&gt;D(存储下标)
+</code></pre>
+<p> 扰动函数的作用：减少哈希碰撞 </p>
+<p>拉链法：将链表和数组结合。若遇到 哈希 冲突，则将元素加到 链表中。</p>
+<ol start="2">
+<li><p>jdk1.8 后 ：在解决哈希 冲突时有较大的变化，当链表长度大于8 时，会将链表 转化成  红黑树。</p>
+<p>红黑树：为了解决二叉查找树的缺陷，提高 搜索效率</p>
+</li>
+<li><p>put 操作：</p>
+<p><img src="https://pic4.zhimg.com/58e67eae921e4b431782c07444af824e_r.jpg" alt="preview"></p>
+</li>
+<li><p>扩容操作</p>
+</li>
+<li><p>HashMap 的长度为什么是2 的幂次方？</p>
+<p> 因为HashMap 计算对应存放位置下标的方法 是 <code>hash &amp; (length-1)</code>，等价于 hash%length（如果除数是2的幂次方的前提下），采用二进制 位操作 &amp; ，相对于% 能够提高运算效率。</p>
+</li>
+</ol>
+<p>ConcurrentHashMap：</p>
+<ol>
+<li><p>是否线程安全  ：线程是安全的</p>
+<p>实现线程安全的方式：</p>
+<ul>
+<li>jdk1.7的时候，ConcurrentHashMap（分段锁） 对 整个桶 数组进行了  <strong>分割分段（Segment）</strong>，每一把锁值锁容器其中一部分数据，多线程访问容器里不同数据段的数据，就不会存在锁竞争，提高并发访问效率。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>jdk1.8 时 放弃 Segment  的概念，直接使用 <strong>Node数组+ 链表+红黑树的数据结构实现，并发控制使用synchronized 和  CAS 来操作</strong>，相当于优化过且线程安全的HashMap。</li>
+</ul>
+<ol start="2">
+<li><p>底层数据结构</p>
+<ul>
+<li><p>jdk1.8之前，采用 <strong>分段的数组+ 链表</strong></p>
+</li>
+<li><p>jdk1.8后，采用 <strong>数组+链表+红黑树</strong></p>
+</li>
+</ul>
+</li>
+</ol>

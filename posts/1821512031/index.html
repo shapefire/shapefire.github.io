@@ -5,8 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Spring, ShapeFanBlog">
-    <meta name="description" content="SpringIOC(inversion of control):  对象有Spring容器创建，对象属性是Spring容器来设置
-控制的内容：指谁来控制对象的创建；传统的应用程序是由程序本身控制，使用Spring后，由Spring来创建对象">
+    <meta name="description" content="Spring书籍——《Spring实战 第四版》
+IOC(inversion of control):  对象有Spring容器创建，对象属性是Spring容器来设置
+控制的内容：指谁来控制对象的创建；传统的应用程序是由程序本身控制，使用S">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -458,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-29
+                    2020-08-17
                 </div>
                 
                 <!--添加作者信息-->
@@ -488,15 +489,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p>IOC(inversion of control):  对象有Spring容器创建，对象属性是Spring容器来设置</p>
-<p>控制的内容：指谁来控制对象的创建；传统的应用程序是由程序本身控制，使用Spring后，由Spring来创建对象</p>
-<p>反转：正转指程序创建对象，反转指程序本身不去创建对象，而变为被动接收的对象</p>
+                <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p>书籍——《Spring实战 第四版》</p>
+<p><strong>IOC</strong>(inversion of control):  对象有Spring容器创建，对象属性是Spring容器来设置</p>
+<p><strong>控制的内容</strong>：指谁来控制对象的创建；传统的应用程序是由程序本身控制，使用Spring后，由Spring来创建对象</p>
+<p><strong>反转</strong>：正转指程序创建对象，反转指程序本身不去创建对象，而变为被动接收的对象</p>
 <p>IOC —- 也称为依赖注入（Denpendency injection ）</p>
 <p>IOC 是一种编程思想。由主动编程变为被动接收</p>
-<p>IOC的实现方式：IOC容器 （beanFactory）</p>
+<p><strong>IOC的实现方式：IOC容器 （beanFactory）</strong></p>
 <p>单例 或多例 模式（scope 属性）</p>
 <p>  ref 引用对象（对象是由Spring来创建的）</p>
-<p>3种ioc来创建对象的方式</p>
+<p><strong>3种ioc来创建对象的方式</strong></p>
 <ol>
 <li><p>无参构造   （property）</p>
 </li>
@@ -533,7 +535,7 @@
 <p>团队协作通过import来实现  <import resource="xx/xxx.xml">  导入配置文件</import></p>
 <h2 id="依赖注入-denpendency-injection"><a href="#依赖注入-denpendency-injection" class="headerlink" title="依赖注入 denpendency injection"></a><strong>依赖注入</strong> denpendency injection</h2><p>依赖：指bean对象创建依赖于容器 。Bean对象的依赖资源</p>
 <p>注入：指bean对象依赖的资源由容器来设置和装配</p>
-<p>spring注入：</p>
+<p>spring注入Bean的方式：</p>
 <ol>
 <li><p>构造器注入</p>
 </li>
@@ -545,35 +547,37 @@
 <li><p>bean注入</p>
 </li>
 <li><p>数组注入</p>
-<pre><code>&lt;bean id = &quot;student&quot; class =&quot;com.zcf.dao.Student&quot;&gt;
+<pre class=" language-xml"><code class="language-xml">&lt;bean id = "student" class ="com.zcf.dao.Student">
         //常量注入
-        &lt;property name=&quot;name&quot; value=&quot;ssss&quot;&gt;&lt;/property&gt;
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ssss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
         //bean注入
-        &lt;property name=&quot;add&quot; ref=&quot;addr&quot;&gt;&lt;/property&gt;
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>add<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addr<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
         //数组注入
-        &lt;property name=&quot;books&quot; &gt;
-            &lt;array&gt;
-                &lt;value&gt;sss&lt;/value&gt;
-                &lt;value&gt;sssss&lt;/value&gt;
-            &lt;/array&gt;
-        &lt;/property&gt;
-        &lt;/bean&gt;</code></pre></li>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>books<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>array</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>sss<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>sssss<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>array</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>list注入</p>
+</li>
+<li><p>Map注入 </p>
+</li>
 </ul>
 </li>
 </ol>
 <ul>
-<li><p>list注入</p>
-</li>
-<li><p>Map注入 </p>
+<li><p>set注入</p>
 <ul>
-<li>set注入</li>
-</ul>
-</li>
 <li><p>null 注入 <property name>  <null>  </null></property></p>
 </li>
 <li><p>properties 注入 <props>  <prop key="xx"> xx</prop></props></p>
 </li>
 <li><p>p 命名空间注入</p>
+</li>
+</ul>
 </li>
 </ul>
 <p>bean的作用域： （scope）</p>
@@ -1855,7 +1859,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">74.3k</span>&nbsp;字
             
             
             
