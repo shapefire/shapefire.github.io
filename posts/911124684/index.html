@@ -36,7 +36,7 @@ GoF设计模式有23个 + 简单工厂模式
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/shapefireblog/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -44,7 +44,7 @@ GoF设计模式有23个 + 简单工厂模式
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
-                <a href="/shapefireblog/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -435,7 +435,7 @@ GoF设计模式有23个 + 简单工厂模式
                     
                     <div class="article-tag">
                         
-                            <a href="/shapefireblog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
                                 <span class="chip bg-color">设计模式</span>
                             </a>
                         
@@ -447,7 +447,7 @@ GoF设计模式有23个 + 简单工厂模式
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/shapefireblog/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
                                 设计模式
                             </a>
                         
@@ -983,7 +983,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </li>
 <li><p>结构图</p>
 <ul>
-<li><img src="/shapefireblog/shapefireblog/posts/911124684/abstractFactoryConstructionImg.PNG" alt="abstractFactoryConstruction"></li>
+<li><img src="/posts/911124684/abstractFactoryConstructionImg.PNG" alt="abstractFactoryConstruction"></li>
 <li>​    AbstractFactory（抽象工厂）：它声明了一组用于创建一族产品的方法，每一个方法对应一 种产品</li>
 <li>​    ConcreteFactory（具体工厂）：它实现了在抽象工厂中声明的创建产品的方法，生成一组具 体产品，这些产品构成了一个产品族，每一个产品都位于某个产品等级结构中</li>
 <li>AbstractProduct（抽象产品）：它为每种产品声明接口，在抽象产品中声明了产品所具有的 业务方法</li>
@@ -1235,7 +1235,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 </li>
 <li><p>结构图</p>
-<p><img src="/shapefireblog/shapefireblog/posts/911124684/singletonConstructionImg.PNG" alt="singletonConstruction"></p>
+<p><img src="/posts/911124684/singletonConstructionImg.PNG" alt="singletonConstruction"></p>
 <ul>
 <li>Singleton（单例）：在单例类的内部实现只生成一个实例，同时它提供一个静态的 getInstance()工厂方法，让客户可以访问它的唯一实例；为了防止在外部对其实例化，将其构 造函数设计为私有；在单例类内部定义了一个Singleton类型的静态对象，作为外部共享的唯一 实例</li>
 </ul>
@@ -1255,7 +1255,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 <h4 id="单例类的两种不同的实现方式："><a href="#单例类的两种不同的实现方式：" class="headerlink" title="单例类的两种不同的实现方式："></a>单例类的两种不同的实现方式：</h4><h5 id="饿汉式单例：实现最简单的单例类"><a href="#饿汉式单例：实现最简单的单例类" class="headerlink" title="饿汉式单例：实现最简单的单例类"></a>饿汉式单例：实现最简单的单例类</h5><ul>
 <li><p>结构图：</p>
-<p><img src="/shapefireblog/shapefireblog/posts/911124684/eagerSingletonConstruction.PNG" alt="eagerSingletonConstruction"></p>
+<p><img src="/posts/911124684/eagerSingletonConstruction.PNG" alt="eagerSingletonConstruction"></p>
 <p>在定义静态变量的时候实例化单例类，因此在<strong>类加载的时候</strong>就已经创建了单例对象</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">EagerSingleton</span>    <span class="token punctuation">{</span>                            <span class="token keyword">private</span>    <span class="token keyword">static</span>    <span class="token keyword">final</span>    EagerSingleton    instance    <span class="token operator">=</span>    <span class="token keyword">new</span>    <span class="token class-name">EagerSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
    <span class="token keyword">private</span>    <span class="token function">EagerSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>    <span class="token punctuation">}</span>            
@@ -1268,7 +1268,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 <h5 id="懒汉式单例类与线程锁定"><a href="#懒汉式单例类与线程锁定" class="headerlink" title="懒汉式单例类与线程锁定"></a>懒汉式单例类与线程锁定</h5><ul>
 <li><p>结构图</p>
-<p><img src="/shapefireblog/shapefireblog/posts/911124684/lazySingletonConstruction.PNG" alt="lazySingletonConstruction"></p>
+<p><img src="/posts/911124684/lazySingletonConstruction.PNG" alt="lazySingletonConstruction"></p>
 <p>懒汉式单例在第一次调用getInstance()方法时实例化，在类加载时并不自 行实例化，这种技术又称为<strong>延迟加载(Lazy    Load)技术</strong>，即<strong>需要的时候再加载实例</strong>，为了避免多个线程同时调用getInstance()方法，使用关键字<strong>synchronized</strong></p>
 <ul>
 <li><p><strong>延迟加载技术</strong>（Lazy Load）</p>
@@ -1571,7 +1571,7 @@ product    <span class="token operator">=</span>    factory<span class="token pu
 </ul>
 </li>
 <li><p>结构图</p>
-<p><img src="/shapefireblog/shapefireblog/posts/911124684/prototypeConstructionImg.PNG" alt="prototypeConstruction"></p>
+<p><img src="/posts/911124684/prototypeConstructionImg.PNG" alt="prototypeConstruction"></p>
 <p>Prototype（抽象原型类）：它是声明克隆方法的接口，是所有具体原型类的公共父类，可以 是抽象类也可以是接口，甚至还可以是具体实现类</p>
 <p>ConcretePrototype（具体原型类）：它实现在抽象原型类中声明的克隆方法，在克隆方法中 返回自己的一个克隆对象。</p>
 <p>Client（客户类）：让一个原型对象克隆自身从而创建一个新的对象，在客户类中<strong>只需要直接实例化或通过工厂方法等方式创建一个原型对象，再通过调用该对象的克隆方法即可得到多个相同的对象</strong>。由于客户类针对抽象原型类Prototype编程，因此用户可以根据需要选择具体原型类，系统具有较好的可扩展性，增加或更换具体原型类都很方便。</p>
@@ -2117,7 +2117,7 @@ com.designPattern.prototype.currencyClone.ConcreteResume@6d06d69c*/</span>
 <p>建造者模式的定义：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可 以创建不同的表示。建造者模式是一种对象创建型模式。</p>
 </li>
 <li><p>结构图</p>
-<p><img src="/shapefireblog/shapefireblog/posts/911124684/builderConstructionImg.PNG" alt="builderConstruction"></p>
+<p><img src="/posts/911124684/builderConstructionImg.PNG" alt="builderConstruction"></p>
 <p>Builder（抽象建造者）：它为创建一个产品Product对象的各个部件指定抽象接口，在该接 口中一般声明两类方法，<strong>一类方法是buildPartX()</strong>，它们用于创建复杂对象的各个部件；<strong>另一 类方法是getResult()</strong>，它们用于返回复杂对象。Builder既可以是抽象类，也可以是接口</p>
 <p>ConcreteBuilder（具体建造者）：它实现了Builder接口，<strong>实现各个部件的具体构造和装配方法</strong>，定义并明确它所创建的复杂对象，也可以提供一个方法返回创建好的复杂产品对象。</p>
 <p>Product（产品角色）：它是<strong>被构建的复杂对象</strong>，包含多个组成部件，具体建造者创建该产品 的内部表示并定义它的装配过程。</p>
@@ -2995,7 +2995,7 @@ Product    product    <span class="token operator">=</span>    director<span cla
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shapefire.gitee.io/shapefireblog" rel="external nofollow noreferrer">ShapeFire</a>
+                    <a href="https://shapefire.github.io" rel="external nofollow noreferrer">ShapeFire</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -3005,7 +3005,7 @@ Product    product    <span class="token operator">=</span>    director<span cla
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shapefire.gitee.io/shapefireblog/shapefireblog/posts/911124684/">https://shapefire.gitee.io/shapefireblog/shapefireblog/posts/911124684/</a>
+                    <a href="https://shapefire.github.io/posts/911124684/">https://shapefire.github.io/posts/911124684/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -3018,7 +3018,7 @@ Product    product    <span class="token operator">=</span>    director<span cla
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://shapefire.gitee.io/shapefireblog" target="_blank">ShapeFire</a>
+                    <a href="https://shapefire.github.io" target="_blank">ShapeFire</a>
                     !
                 </span>
             </div>
@@ -3043,7 +3043,7 @@ Product    product    <span class="token operator">=</span>    director<span cla
                     
                         <div class="article-tag">
                             
-                                <a href="/shapefireblog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
                                     <span class="chip bg-color">设计模式</span>
                                 </a>
                             
@@ -3089,7 +3089,7 @@ Product    product    <span class="token operator">=</span>    director<span cla
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/shapefireblog/posts/1821512031/">
+                <a href="/posts/1821512031/">
                     <div class="card-image">
                         
                         
@@ -3114,7 +3114,7 @@ IOC(inversion of control):  对象有Spring容器创建，对象属性是Spring�
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/shapefireblog/categories/SSM/" class="post-category">
+                            <a href="/categories/SSM/" class="post-category">
                                     SSM
                                 </a>
                             
@@ -3125,7 +3125,7 @@ IOC(inversion of control):  对象有Spring容器创建，对象属性是Spring�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/shapefireblog/tags/Spring/">
+                    <a href="/tags/Spring/">
                         <span class="chip bg-color">Spring</span>
                     </a>
                     
@@ -3140,7 +3140,7 @@ IOC(inversion of control):  对象有Spring容器创建，对象属性是Spring�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/shapefireblog/posts/3710971821/">
+                <a href="/posts/3710971821/">
                     <div class="card-image">
                         
                         
@@ -3163,7 +3163,7 @@ IOC(inversion of control):  对象有Spring容器创建，对象属性是Spring�
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/shapefireblog/categories/%E9%AA%8C%E8%AF%81%E7%A0%81/" class="post-category">
+                            <a href="/categories/%E9%AA%8C%E8%AF%81%E7%A0%81/" class="post-category">
                                     验证码
                                 </a>
                             
@@ -3174,7 +3174,7 @@ IOC(inversion of control):  对象有Spring容器创建，对象属性是Spring�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/shapefireblog/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/">
+                    <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/">
                         <span class="chip bg-color">验证码</span>
                     </a>
                     
@@ -3357,7 +3357,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="https://shapefire.gitee.io/shapefireblog" target="_blank">ShapeFan</a>
+            <a href="https://shapefire.github.io" target="_blank">ShapeFan</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/shapefire" target="_blank">ShapeFan</a>
             <br>
@@ -3456,7 +3456,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="/shapefireblog/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fas fa-rss"></i>
     </a>
 
@@ -3509,7 +3509,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/shapefireblog/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
