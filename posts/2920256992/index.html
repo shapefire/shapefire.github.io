@@ -461,7 +461,7 @@ MVC主要作用：降低视图与业务逻辑间的双向耦合
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-17
+                    2020-09-13
                 </div>
                 
                 <!--添加作者信息-->
@@ -473,14 +473,14 @@ MVC主要作用：降低视图与业务逻辑间的双向耦合
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    21 分
                 </div>
                 
 
@@ -563,30 +563,30 @@ MVC主要作用：降低视图与业务逻辑间的双向耦合
 <ul>
 <li>index.jsp</li>
 </ul>
-<pre class=" language-jsp"><code class="language-jsp"><%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-    <title>Index</title>
-  <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
-  <body>
-  <form action="/hello" method="get">
-    <a href="/hello?method=add" name="add" >a</a>
-    <input type="button" value="delete" onclick="location.href='/hello?method=delete'">
-  </form>
-  </body>
-</html></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page contentType<span class="token operator">=</span><span class="token string">"text/html;charset=UTF-8"</span> language<span class="token operator">=</span><span class="token string">"java"</span> <span class="token operator">%</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+  <span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>Index<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+  <span class="token operator">&lt;</span>body<span class="token operator">></span>
+  <span class="token operator">&lt;</span>form action<span class="token operator">=</span><span class="token string">"/hello"</span> method<span class="token operator">=</span><span class="token string">"get"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"/hello?method=add"</span> name<span class="token operator">=</span><span class="token string">"add"</span> <span class="token operator">></span>a<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+    <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> value<span class="token operator">=</span><span class="token string">"delete"</span> onclick<span class="token operator">=</span><span class="token string">"location.href='/hello?method=delete'"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre>
 <ul>
 <li>test.jsp</li>
 </ul>
-<pre class=" language-jsp"><code class="language-jsp"><%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-    <title>Test</title>
-  </head>
-  <body>
-${msg}
-  </body>
-</html></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page contentType<span class="token operator">=</span><span class="token string">"text/html;charset=UTF-8"</span> language<span class="token operator">=</span><span class="token string">"java"</span> <span class="token operator">%</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+  <span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>Test<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+  <span class="token operator">&lt;</span>body<span class="token operator">></span>
+$<span class="token punctuation">{</span>msg<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre>
 <h2 id="HelloSpringMVC"><a href="#HelloSpringMVC" class="headerlink" title="HelloSpringMVC"></a>HelloSpringMVC</h2><ul>
 <li>导包</li>
 </ul>
@@ -692,15 +692,15 @@ ${msg}
 <ul>
 <li>hellomvc.jsp</li>
 </ul>
-<pre class=" language-jsp"><code class="language-jsp"><%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>welcome</title>
-</head>
-<body>
-${msg}
-</body>
-</html></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page contentType<span class="token operator">=</span><span class="token string">"text/html;charset=UTF-8"</span> language<span class="token operator">=</span><span class="token string">"java"</span> <span class="token operator">%</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>welcome<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+$<span class="token punctuation">{</span>msg<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre>
 <p> 游览器输入 localhost:8080/hello       hello取决于springmvc-servlet-xml 中的 id=”/hello” bean对象</p>
 <p>若在代码无错误的情况下出现404 错误，Project Structure|artifacts |项目目录|  在WEB-INF目录下新建lib包，将jar导入lib文件夹</p>
 <p>在正常开发环境中不会使用这种方法；一般使用注解开发</p>
@@ -820,15 +820,15 @@ http://www.springframework.org/schema/mvc
 <ul>
 <li>hello.jsp</li>
 </ul>
-<pre class=" language-jsp"><code class="language-jsp"><%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Welcome</title>
-</head>
-<body>
-${msg}
-</body>
-</html></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page contentType<span class="token operator">=</span><span class="token string">"text/html;charset=UTF-8"</span> language<span class="token operator">=</span><span class="token string">"java"</span> <span class="token operator">%</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>Welcome<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+$<span class="token punctuation">{</span>msg<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre>
 <h2 id="结果跳转方式"><a href="#结果跳转方式" class="headerlink" title="结果跳转方式"></a>结果跳转方式</h2><p>结果跳转方式除了使用ModelAndView+视图解析器方式外，还有其他的方式</p>
 <h3 id="使用ServletAPI，不需要视图解析器"><a href="#使用ServletAPI，不需要视图解析器" class="headerlink" title="使用ServletAPI，不需要视图解析器"></a>使用ServletAPI，不需要视图解析器</h3><ol>
 <li>HttpServletResponse进行输出；重定向；转发</li>
@@ -1591,7 +1591,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">74.3k</span>&nbsp;字
+                class="white-color">81.8k</span>&nbsp;字
             
             
             
